@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/img/IV.ico">
+    <title>IFSul - Organograma Institucional</title> <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/common/header.css">
+    <link rel="stylesheet" href="../../assets/css/common/footer.css">
+    <style>
+        .org-code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.2px;
+        }
+
+        .org-toolbar .input-group {
+            max-width: 560px;
+        }
+
+        .org-canvas {
+            background: radial-gradient(circle at 20% 10%, rgba(25, 135, 84, 0.10) 0%, rgba(255, 255, 255, 0) 45%),
+                radial-gradient(circle at 80% 35%, rgba(13, 110, 253, 0.08) 0%, rgba(255, 255, 255, 0) 45%),
+                #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 14px;
+            overflow: hidden;
+            user-select: none;
+            touch-action: none;
+        }
+
+        .org-viewport {
+            width: 100%;
+            height: min(78vh, 860px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .org-scene {
+            transform-origin: 0 0;
+            will-change: transform;
+            padding: 28px 28px 60px;
+        }
+
+        .org-tree ul {
+            padding-top: 36px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin: 0;
+            padding-left: 0;
+        }
+
+        .org-tree li {
+            list-style-type: none;
+            text-align: center;
+            position: relative;
+            padding: 36px 10px 0;
+            margin: 0;
+            min-width: 200px;
+        }
+
+        .org-tree li::before,
+        .org-tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 2px solid rgba(33, 37, 41, 0.14);
+            width: 50%;
+            height: 36px;
+        }
+
+        .org-tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 2px solid rgba(33, 37, 41, 0.14);
+        }
+
+        .org-tree li:only-child::after,
+        .org-tree li:only-child::before {
+            display: none;
+        }
+
+        .org-tree li:only-child {
+            padding-top: 0;
+        }
+
+        .org-tree li:first-child::before,
+        .org-tree li:last-child::after {
+            border: 0 none;
+        }
+
+        .org-tree li:last-child::before {
+            border-right: 2px solid rgba(33, 37, 41, 0.14);
+            border-radius: 0 10px 0 0;
+        }
+
+        .org-tree li:first-child::after {
+            border-radius: 10px 0 0 0;
+        }
+
+        .org-tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 2px solid rgba(33, 37, 41, 0.14);
+            width: 0;
+            height: 36px;
+        }
+
+        .org-tree ul.depth-3,
+        .org-tree ul.depth-4,
+        .org-tree ul.depth-5 {
+            flex-wrap: wrap;
+            align-items: stretch;
+            justify-content: center;
+            gap: 14px;
+            padding-top: 18px;
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .org-tree ul.depth-3>li,
+        .org-tree ul.depth-4>li,
+        .org-tree ul.depth-5>li {
+            min-width: 220px;
+            padding-top: 0;
+            flex: 1 1 240px;
+        }
+
+        .org-tree ul.depth-3>li::before,
+        .org-tree ul.depth-3>li::after,
+        .org-tree ul.depth-4>li::before,
+        .org-tree ul.depth-4>li::after,
+        .org-tree ul.depth-5>li::before,
+        .org-tree ul.depth-5>li::after,
+        .org-tree ul.depth-3::before,
+        .org-tree ul.depth-4::before,
+        .org-tree ul.depth-5::before {
+            display: none;
+        }
+
+        .org-node {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(33, 37, 41, 0.12);
+            border-radius: 14px;
+            padding: 12px 14px;
+            min-width: 220px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(8px);
+            cursor: pointer;
+            transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+        }
+
+        .org-node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+            border-color: rgba(25, 135, 84, 0.35);
+        }
+
+        .org-node:focus-visible {
+            outline: 3px solid rgba(13, 110, 253, 0.25);
+            outline-offset: 2px;
+        }
+
+        .org-node-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .org-node-title {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .org-node-sub {
+            color: rgba(33, 37, 41, 0.70);
+            font-size: 0.92rem;
+            line-height: 1.25;
+        }
+
+        .org-toggle {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            border: 1px solid rgba(33, 37, 41, 0.12);
+            background: rgba(248, 249, 250, 0.8);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 160ms ease, border-color 160ms ease;
+        }
+
+        .org-toggle:hover {
+            background: rgba(25, 135, 84, 0.08);
+            border-color: rgba(25, 135, 84, 0.25);
+        }
+
+        .org-tree li.org-collapsed>ul {
+            display: none !important;
+        }
+
+        .org-hidden {
+            display: none !important;
+        }
+
+        .org-match .org-node {
+            border-color: rgba(13, 110, 253, 0.55);
+            box-shadow: 0 14px 34px rgba(13, 110, 253, 0.12);
+        }
+
+        @media (max-width: 768px) {
+            .org-viewport {
+                height: 72vh;
+            }
+
+            .org-tree li {
+                min-width: 200px;
+            }
+
+            .org-node {
+                min-width: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('../header-new/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                ajustarNavbar();
+            });
+
+        function ajustarNavbar() {
+            let path = window.location.pathname;
+            let isHome = path.includes("/home/index.html") || path.endsWith("/home/");
+
+            let navLinks = document.querySelector(".navbar-nav");
+
+            if (!isHome) {
+                let homeLink = navLinks.querySelector("a[href='#home']");
+                if (homeLink) homeLink.setAttribute("href", "/src/home/index.html");
+
+                let scheduleLink = navLinks.querySelector("a[href='#programacao']");
+                if (scheduleLink) scheduleLink.setAttribute("href", "/src/programacao/index.html");
+
+                let contatoLink = navLinks.querySelector("a[href='#contato']");
+                if (contatoLink) contatoLink.closest("li").remove();
+
+                let arenaLink = navLinks.querySelector("a[href='#arena']");
+                if (arenaLink) arenaLink.setAttribute("href", "../arenagame/index.html");
+            }
+        }
+    </script>
+
+    <main>
+        <section class="py-5 bg-light" style="margin-top: 76px;">
+            <div class="container">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <i class="bi bi-diagram-3 fs-2 text-success"></i>
+                    <div>
+                        <h1 class="h3 mb-1 fw-bold">Organograma Institucional</h1>
+                        <div class="text-muted">IFSul — Câmpus Passo Fundo</div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="org-toolbar d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3 mb-3">
+                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                <h2 class="h5 fw-semibold mb-0 me-2">Estrutura do Câmpus</h2>
+                                <div class="btn-group" role="group" aria-label="Controles do organograma">
+                                    <button id="orgZoomOut" type="button" class="btn btn-outline-secondary btn-sm">
+                                        <i class="bi bi-zoom-out"></i>
+                                    </button>
+                                    <button id="orgZoomIn" type="button" class="btn btn-outline-secondary btn-sm">
+                                        <i class="bi bi-zoom-in"></i>
+                                    </button>
+                                    <button id="orgReset" type="button" class="btn btn-outline-secondary btn-sm">
+                                        <i class="bi bi-arrow-counterclockwise"></i>
+                                    </button>
+                                </div>
+                                <div class="btn-group" role="group" aria-label="Expansão do organograma">
+                                    <button id="orgExpandAll" type="button" class="btn btn-outline-success btn-sm">
+                                        Expandir tudo
+                                    </button>
+                                    <button id="orgCollapseAll" type="button" class="btn btn-outline-success btn-sm">
+                                        Recolher tudo
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-column flex-md-row align-items-md-center gap-2">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                                    <input id="orgFilter" type="text" class="form-control"
+                                        placeholder="Filtrar por código, setor ou responsável" autocomplete="off">
+                                    <button id="orgClear" class="btn btn-outline-secondary" type="button">Limpar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                            <div id="orgSummary" class="text-muted small"></div>
+                            <div class="text-muted small">Arraste para mover. Use zoom para aproximar/afastar.</div>
+                        </div>
+
+                        <div class="org-canvas">
+                            <div id="orgViewport" class="org-viewport">
+                                <div id="orgScene" class="org-scene">
+                                    <div id="orgTree" class="org-tree"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal fade" id="orgModal" tabindex="-1" aria-labelledby="orgModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="orgModalLabel">Detalhes</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column gap-2">
+                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                <span id="orgModalCode" class="badge text-bg-success org-code"></span>
+                                <div id="orgModalName" class="fw-semibold"></div>
+                            </div>
+                            <div>
+                                <div class="text-muted small">Responsável</div>
+                                <div id="orgModalPerson" class="fw-semibold"></div>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 pt-2">
+                                <button id="orgCopyCode" type="button" class="btn btn-sm btn-outline-secondary">
+                                    <i class="bi bi-clipboard me-1"></i>Copiar código
+                                </button>
+                                <button id="orgCopyName" type="button" class="btn btn-sm btn-outline-secondary">
+                                    <i class="bi bi-clipboard me-1"></i>Copiar setor
+                                </button>
+                                <button id="orgCopyPerson" type="button" class="btn btn-sm btn-outline-secondary">
+                                    <i class="bi bi-clipboard me-1"></i>Copiar responsável
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer-placeholder"></div>
+        <script>
+            fetch('../footer/index.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        </script>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        const orgTreeData = {
+            id: "PF-CAMPUS",
+            code: "CÂMPUS",
+            name: "Câmpus Passo Fundo",
+            person: "",
+            children: [
+                {
+                    id: "PF-DIRGER",
+                    code: "PF-DIRGER",
+                    name: "Direção-Geral do Câmpus Passo Fundo",
+                    person: "Lucas Vanini",
+                    children: [
+                        {
+                            id: "PF-GABDIR",
+                            code: "PF-GABDIR",
+                            name: "Chefia de Gabinete do Diretor-Geral do Campus Passo Fundo",
+                            person: "Alana Arena Schneider"
+                        },
+                        {
+                            id: "PF-COTRAN",
+                            code: "PF-COTRAN",
+                            name: "Coordenadoria de Protocolo e Transporte",
+                            person: "Paulo Wladimir da Luz Leite"
+                        },
+                        {
+                            id: "PF-DEAP",
+                            code: "PF-DEAP",
+                            name: "Departamento de Administração e de Planejamento",
+                            person: "Cleiton Xavier dos Santos",
+                            children: [
+                                { id: "PF-COAP", code: "PF-COAP", name: "Coordenadoria de Almoxarifado e Patrimônio", person: "Almir Menegaz" },
+                                { id: "PF-COLIC", code: "PF-COLIC", name: "Coordenadoria de Licitações e Compras", person: "Gislaine Caimi Guedes" },
+                                { id: "PF-COMAG", code: "PF-COMAG", name: "Coordenadoria de Manutenção Geral", person: "Pablo Caigaro Navarro" },
+                                { id: "PF-COCAF", code: "PF-COCAF", name: "Coordenadoria de Orçamento, Contabilidade e Finanças", person: "Luis Fernando Locatelli dos Santos" },
+                                { id: "PF-COTIN", code: "PF-COTIN", name: "Coordenadoria de Tecnologia da Informação", person: "Fernanda Milani" }
+                            ]
+                        },
+                        {
+                            id: "PF-DEPEX",
+                            code: "PF-DEPEX",
+                            name: "Departamento de Ensino, Pesquisa e Extensão",
+                            person: "Alexsander Furtado Carneiro",
+                            children: [
+                                {
+                                    id: "PF-DEPEX-COORD",
+                                    code: "COORD",
+                                    type: "group",
+                                    name: "Coordenações",
+                                    person: "",
+                                    children: [
+                                        { id: "PF-COGER", code: "PF-COGER", name: "Coordenadoria das Áreas de Formação Geral e Apoio ao Ensino", person: "Carlisa Smoktunowicz Toebe" },
+                                        { id: "PF-COAE", code: "PF-COAE", name: "Coordenadoria de Assistência Estudantil", person: "Camila Besold" },
+                                        { id: "PF-CORAC", code: "PF-CORAC", name: "Coordenadoria de Registros Acadêmicos", person: "Cibeli Barea" }
+                                    ]
+                                },
+                                {
+                                    id: "PF-DEPEX-PESQEXT",
+                                    code: "PESQ/EXT",
+                                    type: "group",
+                                    name: "Pesquisa, Extensão e Inovação",
+                                    person: "",
+                                    children: [
+                                        { id: "PF-COEX", code: "PF-COEX", name: "Coordenadoria de Extensão e Cultura", person: "Carmem Vera Scorsatto" },
+                                        { id: "PF-COPIN", code: "PF-COPIN", name: "Coordenadoria de Pesquisa e Inovação", person: "Jucelino Cortez" }
+                                    ]
+                                },
+                                {
+                                    id: "PF-DEPEX-SUP",
+                                    code: "SUP",
+                                    type: "group",
+                                    name: "Cursos Superiores",
+                                    person: "",
+                                    children: [
+                                        { id: "PF-CLEPT-EAD", code: "PF-CLEPT-EAD", name: "Curso de Licenciatura em Educação Profissional e Tecnológica - EAD", person: "Vanda Aparecida Favero Pino" },
+                                        { id: "PF-CSBCC", code: "PF-CSBCC", name: "Curso Superior de Bacharelado em Ciência da Computação", person: "Vanessa Lago Machado" },
+                                        { id: "PF-CSEC", code: "PF-CSEC", name: "Curso Superior de Engenharia Civil", person: "Rodrigo Bordignon" },
+                                        { id: "PF-CSEM", code: "PF-CSEM", name: "Curso Superior de Engenharia Mecânica", person: "Mauricio Rodrigues Policena" }
+                                    ]
+                                },
+                                {
+                                    id: "PF-DEPEX-TEC",
+                                    code: "TÉC",
+                                    type: "group",
+                                    name: "Cursos Técnicos",
+                                    person: "",
+                                    children: [
+                                        {
+                                            id: "PF-DEPEX-TEC-PRES",
+                                            code: "PRES",
+                                            type: "group",
+                                            name: "Presenciais",
+                                            person: "",
+                                            children: [
+                                                { id: "PF-COINF", code: "PF-COINF", name: "Curso Técnico de Informática", person: "Josue Toebe" },
+                                                { id: "PF-COMEC", code: "PF-COMEC", name: "Curso Técnico de Mecânica", person: "Juliano Poleze" },
+                                                { id: "PF-CTDES", code: "PF-CTDES", name: "Curso Técnico em Desenho de Construção Civil", person: "Maristani Gampert Spannenberg Formigheri" },
+                                                { id: "PF-COEDI", code: "PF-COEDI", name: "Curso Técnico em Edificações", person: "Francisco Lorenzini Neto" },
+                                                { id: "PF-CTFM", code: "PF-CTFM", name: "Curso Técnico em Fabricação Mecânica", person: "Denilson Jose Seidel" },
+                                                { id: "PF-COMSI", code: "PF-COMSI", name: "Curso Técnico em Manutenção e Suporte em Informática", person: "Rafael Marisco Bertei" }
+                                            ]
+                                        },
+                                        {
+                                            id: "PF-DEPEX-TEC-EAD",
+                                            code: "EAD",
+                                            type: "group",
+                                            name: "EAD",
+                                            person: "",
+                                            defaultCollapsed: true,
+                                            children: [
+                                                { id: "PF-CTADMINEAD", code: "PF-CTADMINEAD", name: "Curso Técnico em Administração EAD", person: "-" },
+                                                { id: "PF-CTCONTEAD", code: "PF-CTCONTEAD", name: "Curso Técnico em Contabilidade EAD", person: "-" },
+                                                { id: "PF-CTMAEAD", code: "PF-CTMAEAD", name: "Curso Técnico em Meio Ambiente EAD", person: "-" }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    id: "PF-DEPEX-NUC",
+                                    code: "NUC",
+                                    type: "group",
+                                    name: "Núcleos e apoio",
+                                    person: "",
+                                    defaultCollapsed: true,
+                                    children: [
+                                        { id: "PF-NAPNE", code: "PF-NAPNE", name: "Núcleo de Apoio às Pessoas com Necessidades Específicas", person: "Jose Antonio Oliveira de Figueiredo" }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+
+        function normalizeText(value) {
+            return (value || "")
+                .toString()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase()
+                .trim();
+        }
+
+        async function copyText(value) {
+            const text = (value || "").toString();
+            if (!text) return false;
+
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+                return true;
+            }
+
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            textarea.setAttribute("readonly", "");
+            textarea.style.position = "absolute";
+            textarea.style.left = "-9999px";
+            document.body.appendChild(textarea);
+            textarea.select();
+            const ok = document.execCommand("copy");
+            textarea.remove();
+            return ok;
+        }
+
+        function flattenTree(root) {
+            const nodes = new Map();
+            const parentById = new Map();
+            const allIds = [];
+
+            function walk(node, parentId) {
+                nodes.set(node.id, node);
+                allIds.push(node.id);
+                if (parentId) parentById.set(node.id, parentId);
+                (node.children || []).forEach(child => walk(child, node.id));
+            }
+
+            walk(root, null);
+            return { nodes, parentById, allIds };
+        }
+
+        const orgFilter = document.getElementById("orgFilter");
+        const orgClear = document.getElementById("orgClear");
+        const orgTree = document.getElementById("orgTree");
+        const orgSummary = document.getElementById("orgSummary");
+        const orgViewport = document.getElementById("orgViewport");
+        const orgScene = document.getElementById("orgScene");
+        const orgZoomIn = document.getElementById("orgZoomIn");
+        const orgZoomOut = document.getElementById("orgZoomOut");
+        const orgReset = document.getElementById("orgReset");
+        const orgExpandAll = document.getElementById("orgExpandAll");
+        const orgCollapseAll = document.getElementById("orgCollapseAll");
+
+        const orgModalEl = document.getElementById("orgModal");
+        const orgModal = new bootstrap.Modal(orgModalEl);
+        const orgModalCode = document.getElementById("orgModalCode");
+        const orgModalName = document.getElementById("orgModalName");
+        const orgModalPerson = document.getElementById("orgModalPerson");
+        const orgCopyCode = document.getElementById("orgCopyCode");
+        const orgCopyName = document.getElementById("orgCopyName");
+        const orgCopyPerson = document.getElementById("orgCopyPerson");
+
+        const { nodes: nodeById, parentById, allIds } = flattenTree(orgTreeData);
+
+        function getNodeText(node) {
+            return normalizeText(`${node.code} ${node.name} ${node.person || ""}`);
+        }
+
+        function renderTree(node, depth) {
+            const hasChildren = (node.children || []).length > 0;
+            const person = node.person && node.person.trim() !== "-" ? node.person : "";
+
+            const childrenHtml = hasChildren
+                ? `<ul class="depth-${depth + 1}">${node.children.map(child => renderTree(child, depth + 1)).join("")}</ul>`
+                : "";
+
+            const toggleHtml = hasChildren
+                ? `<button type="button" class="org-toggle" data-action="toggle" aria-label="Expandir/Recolher">
+                        <i class="bi bi-chevron-down"></i>
+                    </button>`
+                : "";
+
+            const badgeColor = node.code === "CÂMPUS"
+                ? "text-bg-primary"
+                : (node.type === "group" ? "text-bg-secondary" : "text-bg-success");
+
+            return `
+                <li data-id="${node.id}" class="${node.defaultCollapsed ? "org-collapsed" : ""} depth-${depth}">
+                    <div class="org-node" role="button" tabindex="0" data-action="open">
+                        <div class="org-node-top">
+                            <span class="badge ${badgeColor} org-code">${node.code}</span>
+                            ${toggleHtml}
+                        </div>
+                        <div class="org-node-title">${node.name}</div>
+                        ${person ? `<div class="org-node-sub">${person}</div>` : `<div class="org-node-sub"> </div>`}
+                    </div>
+                    ${childrenHtml}
+                </li>
+            `;
+        }
+
+        orgTree.innerHTML = `<ul class="depth-0">${renderTree(orgTreeData, 0)}</ul>`;
+
+        function setCollapseAll(collapsed) {
+            orgTree.querySelectorAll("li").forEach(li => {
+                const id = li.getAttribute("data-id");
+                const node = nodeById.get(id);
+                if (!node) return;
+                const hasChildren = (node.children || []).length > 0;
+                if (!hasChildren) return;
+                if (collapsed) li.classList.add("org-collapsed");
+                else li.classList.remove("org-collapsed");
+            });
+            updateChevronIcons();
+        }
+
+        function updateChevronIcons() {
+            orgTree.querySelectorAll("li").forEach(li => {
+                const toggle = li.querySelector(":scope > .org-node [data-action='toggle'] i");
+                if (!toggle) return;
+                if (li.classList.contains("org-collapsed")) {
+                    toggle.classList.remove("bi-chevron-down");
+                    toggle.classList.add("bi-chevron-right");
+                } else {
+                    toggle.classList.remove("bi-chevron-right");
+                    toggle.classList.add("bi-chevron-down");
+                }
+            });
+        }
+
+        function showModalForNode(nodeId) {
+            const node = nodeById.get(nodeId);
+            if (!node) return;
+            const person = node.person && node.person.trim() !== "-" ? node.person : "Não informado";
+
+            orgModalCode.textContent = node.code;
+            orgModalName.textContent = node.name;
+            orgModalPerson.textContent = person;
+
+            orgCopyCode.setAttribute("data-copy", node.code);
+            orgCopyName.setAttribute("data-copy", node.name);
+            orgCopyPerson.setAttribute("data-copy", person);
+
+            orgModal.show();
+        }
+
+        function markCopyButton(btn, ok) {
+            if (!ok) return;
+            btn.classList.remove("btn-outline-secondary");
+            btn.classList.add("btn-outline-success");
+            setTimeout(() => {
+                btn.classList.add("btn-outline-secondary");
+                btn.classList.remove("btn-outline-success");
+            }, 700);
+        }
+
+        function applyFilter(value) {
+            const q = normalizeText(value);
+            const matches = new Set();
+            const visible = new Set();
+
+            if (q) {
+                allIds.forEach(id => {
+                    const node = nodeById.get(id);
+                    if (!node) return;
+                    if (getNodeText(node).includes(q)) matches.add(id);
+                });
+
+                matches.forEach(id => {
+                    let cur = id;
+                    while (cur) {
+                        visible.add(cur);
+                        cur = parentById.get(cur);
+                    }
+                });
+            } else {
+                allIds.forEach(id => visible.add(id));
+            }
+
+            orgTree.querySelectorAll("li").forEach(li => {
+                const id = li.getAttribute("data-id");
+                li.classList.toggle("org-hidden", !visible.has(id));
+                li.classList.toggle("org-match", matches.has(id));
+                if (q && visible.has(id)) li.classList.remove("org-collapsed");
+            });
+
+            orgSummary.textContent = q ? `${visible.size} itens relevantes` : `${allIds.length} itens`;
+            updateChevronIcons();
+        }
+
+        let view = { x: 0, y: 0, scale: 1 };
+        let pan = { active: false, startX: 0, startY: 0, originX: 0, originY: 0 };
+        const mutuallyExclusiveTop = new Set(["PF-DEAP", "PF-DEPEX"]);
+
+        function collapseNodeById(nodeId) {
+            const li = orgTree.querySelector(`li[data-id="${nodeId}"]`);
+            if (!li) return;
+            li.classList.add("org-collapsed");
+        }
+
+        function clamp(value, min, max) {
+            return Math.min(max, Math.max(min, value));
+        }
+
+        function applyTransform() {
+            orgScene.style.transform = `translate(${view.x}px, ${view.y}px) scale(${view.scale})`;
+        }
+
+        function resetView() {
+            view = { x: 0, y: 0, scale: 1 };
+            applyTransform();
+        }
+
+        function zoomBy(delta) {
+            const next = clamp(view.scale + delta, 0.55, 1.6);
+            view.scale = next;
+            applyTransform();
+        }
+
+        setCollapseAll(false);
+        resetView();
+        applyFilter("");
+
+        orgFilter.addEventListener("input", (e) => {
+            applyFilter(e.target.value);
+        });
+
+        orgClear.addEventListener("click", () => {
+            orgFilter.value = "";
+            applyFilter("");
+            orgFilter.focus();
+        });
+
+        document.addEventListener("click", async (e) => {
+            const toggleBtn = e.target.closest("[data-action='toggle']");
+            if (toggleBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                const li = toggleBtn.closest("li");
+                if (!li) return;
+                const nodeId = li.getAttribute("data-id");
+                const willExpand = li.classList.contains("org-collapsed");
+                if (willExpand && mutuallyExclusiveTop.has(nodeId)) {
+                    mutuallyExclusiveTop.forEach(otherId => {
+                        if (otherId !== nodeId) collapseNodeById(otherId);
+                    });
+                }
+                li.classList.toggle("org-collapsed");
+                updateChevronIcons();
+                return;
+            }
+
+            const nodeBtn = e.target.closest("[data-action='open']");
+            if (nodeBtn) {
+                const li = nodeBtn.closest("li");
+                const nodeId = li ? li.getAttribute("data-id") : null;
+                if (nodeId) showModalForNode(nodeId);
+                return;
+            }
+
+            const copyBtn = e.target.closest("[data-copy]");
+            if (copyBtn) {
+                const value = copyBtn.getAttribute("data-copy");
+                try {
+                    const ok = await copyText(value);
+                    markCopyButton(copyBtn, ok);
+                } catch {
+                }
+                return;
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key !== "Enter" && e.key !== " ") return;
+            const node = e.target.closest("[data-action='open']");
+            if (!node) return;
+            e.preventDefault();
+            const li = node.closest("li");
+            const nodeId = li ? li.getAttribute("data-id") : null;
+            if (nodeId) showModalForNode(nodeId);
+        });
+
+        orgZoomIn.addEventListener("click", () => zoomBy(0.12));
+        orgZoomOut.addEventListener("click", () => zoomBy(-0.12));
+        orgReset.addEventListener("click", () => resetView());
+        orgExpandAll.addEventListener("click", () => setCollapseAll(false));
+        orgCollapseAll.addEventListener("click", () => setCollapseAll(true));
+
+        orgViewport.addEventListener("pointerdown", (e) => {
+            if (e.button !== 0) return;
+            if (e.target.closest(".org-node") || e.target.closest(".btn") || e.target.closest("input")) return;
+            pan.active = true;
+            pan.startX = e.clientX;
+            pan.startY = e.clientY;
+            pan.originX = view.x;
+            pan.originY = view.y;
+            orgViewport.setPointerCapture(e.pointerId);
+        });
+
+        orgViewport.addEventListener("pointermove", (e) => {
+            if (!pan.active) return;
+            const dx = e.clientX - pan.startX;
+            const dy = e.clientY - pan.startY;
+            view.x = pan.originX + dx;
+            view.y = pan.originY + dy;
+            applyTransform();
+        });
+
+        orgViewport.addEventListener("pointerup", () => {
+            pan.active = false;
+        });
+
+        orgViewport.addEventListener("pointercancel", () => {
+            pan.active = false;
+        });
+
+        orgViewport.addEventListener("wheel", (e) => {
+            if (!e.ctrlKey) return;
+            e.preventDefault();
+            const delta = e.deltaY > 0 ? -0.08 : 0.08;
+            zoomBy(delta);
+        }, { passive: false });
+    </script>
+    <!-- Script de Autenticação SUAP -->
+    <script src="../../assets/js/suap-auth.js"></script>
+</body>
+
+</html>

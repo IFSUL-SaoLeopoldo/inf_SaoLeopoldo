@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/img/IV.ico">
+    <title>Inf - Portal da Informática - Comunidade</title> <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/common/header.css">
+    <link rel="stylesheet" href="../../assets/css/common/footer.css">
+    <link rel="stylesheet" href="../../assets/css/comunidade/comunidade.css">
+    <link rel="stylesheet" href="../../assets/css/comunidade/extensao-projetos.css">
+
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('../header-new/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mx-auto text-center hero-content">
+                        <span class="hero-badge">COMUNIDADE IFSUL</span>
+                        <h1 class="hero-title">Faça Parte dos Nossos Grupos</h1>
+                        <p class="hero-subtitle">
+                            Conecte-se com outros estudantes, desenvolva novas habilidades e participe de atividades que
+                            vão além da sala de aula.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--PROJETOS DE EXTENSÃO -->
+<section class="projetos-extensao-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">PROJETOS DE EXTENSÃO</span>
+      <h2 class="section-title">Conheça Nossos Projetos</h2>
+      <p class="section-description">
+        Conheça os projetos de extensão desenvolvidos pelos professores e alunos
+        do curso de Ciência da Computação do IFSul Câmpus Passo Fundo.
+      </p>
+    </div>
+ 
+    <!-- Os cards são inseridos aqui pelo extensao-projetos.js -->
+    <div class="row" id="projetos-extensao-lista">
+      <div class="col-12 text-center py-5">
+        <div class="spinner-border text-success" role="status" style="width:2.5rem;height:2.5rem;">
+          <span class="visually-hidden">Carregando...</span>
+        </div>
+        <p class="mt-3 text-muted">Carregando projetos de extensão...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- GRUPOS -->
+    <section class="groups-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">GRUPOS INSTITUCIONAIS</span>
+                <h2 class="section-title">Conheça Nossos Grupos</h2>
+                <p class="section-description">
+                    Participe de grupos que surgiram de projetos institucionais e que promovem integração, aprendizado, desenvolvimento pessoal e
+                    profissional.
+                </p>
+            </div>
+
+                <div class="row">
+                    <!-- Grupo de Xadrez -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="group-card">
+                            <div class="group-banner">
+                                <img src="../../assets/img/comunidade/logo_Xadrez.png" alt="Clube de Xadrez" width="220"
+                                    class="group-image">
+                            </div>
+                            <div class="group-content">
+                                <span class="group-label">ESPORTE E ESTRATÉGIA</span>
+                                <h3 class="group-title">Clube de Xadrez</h3>
+                                <p class="group-description">
+                                    Desenvolva o raciocínio lógico, estratégico e a concentração através do xadrez.
+                                    Nosso grupo promove torneios internos, treinos semanais e representa o IFSul em
+                                    competições regionais.
+                                </p>
+                                <ul class="group-features">
+                                    <li><i class="bi bi-check-circle-fill"></i> Treinos semanais</li>
+                                    <li><i class="bi bi-trophy-fill"></i> Participação em torneios</li>
+                                    <li><i class="bi bi-people-fill"></i> Todos os níveis são bem-vindos</li>
+                                    <li> <strong style="color:#1a5f3a ;">Professor Responsavel: </strong> Daniel Delfini
+                                    </li>
+                                </ul>
+                                <div class="group-actions">
+
+                                    <a href="mailto:danielribeiro@ifsul.edu.br?subject=[site INF]Dúvida%20sobre%20Clube%20Xadrez" target="_blank" class="btn-group">
+                                        <i class="bi bi-person-badge me-2"></i>Contato do Professor: <br> danielribeiro@ifsul.edu.br
+                                    </a>
+                                    <a href="https://www.instagram.com/ifpfxadrez/" target="_blank" class="btn-group">
+                                        <i class="bi bi-instagram me-2"></i>Contato do Grupo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grupo de RPG -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="group-card">
+                            <div class="group-banner">
+                                <img src="../../assets/img/comunidade/rpg.png" alt="Grupo de RPG" class="group-image">
+                            </div>
+                            <div class="group-content">
+                                <span class="group-label">CRIATIVIDADE E DIVERSÃO</span>
+                                <h3 class="group-title">Clube de RPG</h3>
+                                <p class="group-description">
+                                    Criado em 1974 por Gary Gygax e Dave Arneson, o RPG é um tipo de jogo analógico,
+                                    onde
+                                    os participantes interpretam e controlam personagens imersos em uma narrativa. Por
+                                    ser uma
+                                    atividade intrinsecamente criativa e social, o RPG estimula diversas habilidades
+                                    como leitura,
+                                    comunicação, resolução de problemas, trabalho em equipe, liderança e organização.
+                                </p>
+                                <ul class="group-features">
+                                    <li><i class="bi bi-dice-5-fill"></i>Mesas de RPG agendadas</li>
+                                    <li><i class="bi bi-book-fill"></i> Diversos sistemas de jogo</li>
+                                    <li><i class="bi bi-star-fill"></i> Para iniciantes e veteranos</li>
+                                    <li> <strong style="color:#1a5f3a ;">Professor Responsavel: </strong> José A. O. de
+                                        Figueiredo
+                                    </li>
+                                </ul>
+                                <div class="group-actions">
+
+                                    <a href="mailto:josefigueiredo@ifsul.edu.br?subject=[site INF]Dúvida%20sobre%20Clube%20RPG: " target="_blank" class="btn-group">
+                                        <i class="bi bi-person-badge me-2"></i>Contato do Professor: <br>josefigueiredo@ifsul.edu.br
+                                    </a>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mulheres na Computação -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="group-card">
+                            <div class="group-banner">
+                                <img src="../../assets/img/comunidade/mulheres2.png" alt="Mulheres na Computação"
+                                    class="group-image">
+                            </div>
+                            <div class="group-content">
+                                <span class="group-label">EMPODERAMENTO E TECNOLOGIA</span>
+                                <h3 class="group-title">Mulheres na Computação</h3>
+                                <p class="group-description">
+                                    Promovemos a participação feminina na área de tecnologia através de integrações,
+                                    eventos
+                                    e mentorias. Lutamos por equidade de gênero e criamos uma rede de apoio para
+                                    mulheres na computação.
+                                </p>
+                                <ul class="group-features">
+                                    <li><i class="bi bi-puzzle-fill"></i> Integrações e eventos</li>
+                                    <li><i class="bi bi-people-fill"></i> Rede de apoio e mentoria</li>
+                                    <li><i class="bi bi-award-fill"></i> Incentivo à carreira tech</li>
+                                    <li> <strong style="color:#1a5f3a ;">Professor Responsavel: </strong> Carmen V.
+                                        Scorsatto | Anubis G. M. Rossetto | Vanessa L. Machado
+                                    </li>
+                                </ul>
+                                <div class="group-actions">
+                                    <a href="../professores/index.html" target="_blank" class="btn-group">
+                                        <i class="bi bi-person-badge me-2"></i>Contato do Professor
+                                    </a>
+                                    <a href="https://chat.whatsapp.com/CfsM0lCz140Go67oXica07" target="_blank"
+                                        class="btn-group">
+                                        <i class="bi bi-whatsapp me-2"></i>Contato do Grupo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="outros_grupos" style="margin-top: 50px;">
+                <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">OUTROS GRUPOS</span>
+                    <h2 class="section-title">Mais formas de integração</h2>
+                </div>
+                
+                    <!-- Atlética Linão -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="group-card">
+                            <div class="group-banner">
+                                <img src="../../assets/img/comunidade/linao.png" alt="Atlética Linão"
+                                    class="group-image">
+                            </div>
+                            <div class="group-content">
+                                <span class="group-label">ESPORTE E INTEGRAÇÃO</span>
+                                <h3 class="group-title">Atlética Linão</h3>
+                                <p class="group-description">
+                                    A Atlética dos cursos de Computação do IFSul! Promovemos eventos esportivos,
+                                    confraternizações
+                                    e representamos nossos cursos em competições interuniversitárias. Venha fazer parte
+                                    do time!
+                                </p>
+                                <ul class="group-features">
+                                    <li><i class="bi bi-trophy-fill"></i> Competições esportivas</li>
+                                    <li><i class="bi bi-calendar-event-fill"></i> Eventos e festas</li>
+                                    <li><i class="bi bi-heart-fill"></i> Integração entre cursos</li>
+                                </ul>
+                                <a href="https://www.instagram.com/aaaccif/" target="_blank" class="btn-group">
+                                    <i class="bi bi-instagram me-2"></i>Contato do Grupo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="cta-title">Quer Criar um Novo Grupo?</h2>
+                        <p class="cta-text">
+                            Tem uma ideia para um novo grupo ou projeto? Entre em contato com a coordenação
+                            e conte com nosso apoio para tirar sua ideia do papel!
+                        </p>
+                        <span href="mailto:pf-corac@ifsul.edu.br" class="btn-cta">
+                            <i class="bi bi-envelope-fill me-2"></i>pf-corac@ifsul.edu.br
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('../footer/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./extensao-projetos.js"></script>    <!-- Script de Autenticação SUAP -->
+    <script src="../../assets/js/suap-auth.js"></script>
+</body>
+
+</html>

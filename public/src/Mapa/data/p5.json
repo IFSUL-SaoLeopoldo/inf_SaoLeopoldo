@@ -1,0 +1,8 @@
+[
+    {
+        "name": "Sala dos Professores",
+        "location": ["84%", "91%"],
+        "description": "Conheça nossos<br><i class='bi bi-mortarboard-fill'></i> <a href='../professores/index.html'>Professores</a>",
+        "image": "./assets/icons/p7.svg"
+    }
+]

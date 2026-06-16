@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Onde fica o IFSul Câmpus Passo Fundo?",
+    "answer": "O IFSul Câmpus Passo Fundo está localizado na Avenida Perimetral Leste, 150, Bairro Brasília, Passo Fundo - RS."
+  },
+  {
+    "id": 2,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Os cursos são gratuitos?",
+    "answer": "Sim! Todos os cursos oferecidos pelo IFSul são totalmente gratuitos, sendo uma instituição pública federal de ensino."
+  },
+  {
+    "id": 3,
+    "category": "Geral",
+    "subcategory": "Ingresso",
+    "question": "Como faço para ingressar?",
+    "answer": "O ingresso nos cursos ocorre através de processos seletivos (vestibulares) que geralmente acontecem duas vezes ao ano (inverno e verão). Fique atento ao site do IFSul para editais e datas."
+  },
+  {
+    "id": 4,
+    "category": "Ciência da Computação",
+    "subcategory": "Candidatos",
+    "question": "Qual a duração do curso de Ciência da Computação?",
+    "answer": "O curso de Bacharelado em Ciência da Computação tem duração média de 4 a 5 anos (8 a 10 semestres)."
+  },
+  {
+    "id": 5,
+    "category": "Ciência da Computação",
+    "subcategory": "Candidatos",
+    "question": "Qual o turno das aulas do BCC?",
+    "answer": "As aulas do curso de Ciência da Computação ocorrem predominantemente no turno da manhã."
+  },
+  {
+    "id": 101,
+    "category": "Ciência da Computação",
+    "subcategory": "Alunos",
+    "question": "Onde encontro o horário das aulas?",
+    "answer": "Os horários das aulas estão disponíveis na seção 'Horários' no menu do curso ou através dos murais no câmpus."
+  },
+  {
+    "id": 102,
+    "category": "Ciência da Computação",
+    "subcategory": "Alunos",
+    "question": "Como faço para solicitar aproveitamento de disciplinas?",
+    "answer": "O aproveitamento de disciplinas deve ser solicitado na CORAC (Coordenação de Registros Acadêmicos) dentro dos prazos estipulados no calendário acadêmico, apresentando o histórico escolar e as ementas das disciplinas cursadas."
+  },
+  {
+    "id": 6,
+    "category": "TMSI",
+    "subcategory": "Candidatos",
+    "question": "O que significa curso \"Subsequente\"?",
+    "answer": "A modalidade Subsequente é destinada a quem já concluiu o Ensino Médio e deseja fazer apenas a formação técnica."
+  },
+  {
+    "id": 7,
+    "category": "TMSI",
+    "subcategory": "Candidatos",
+    "question": "Qual a duração do curso técnico?",
+    "answer": "O curso Técnico em Manutenção e Suporte em Informática tem duração média de 3 a 4 semestres (1 ano e meio a 2 anos)."
+  },
+  {
+    "id": 8,
+    "category": "TMSI",
+    "subcategory": "Candidatos",
+    "question": "Qual o turno das aulas do TMSI?",
+    "answer": "As aulas do curso Técnico em Manutenção e Suporte em Informática ocorrem predominantemente no turno da noite."
+  },
+  {
+    "id": 201,
+    "category": "TMSI",
+    "subcategory": "Alunos",
+    "question": "O estágio é obrigatório?",
+    "answer": "Sim, o estágio curricular supervisionado é obrigatório para a conclusão do curso técnico e obtenção do diploma."
+  },
+  {
+    "id": 202,
+    "category": "TMSI",
+    "subcategory": "Alunos",
+    "question": "Posso usar os laboratórios fora do horário de aula?",
+    "answer": "Sim, os laboratórios podem ser utilizados para estudo e trabalhos nos horários livres, mediante disponibilidade e autorização da coordenação ou professores responsáveis."
+  }
+]

@@ -1,0 +1,236 @@
+[
+  {
+    "id": 1,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Onde fica o IFSul Câmpus Passo Fundo?",
+    "answer": "O IFSul Câmpus Passo Fundo está localizado na Avenida Perimetral Leste, 150, Bairro Brasília, Passo Fundo - RS."
+  },
+  {
+    "id": 2,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Os cursos são gratuitos?",
+    "answer": "Sim! Todos os cursos oferecidos pelo IFSul são totalmente gratuitos, sendo uma instituição pública federal de ensino."
+  },
+{
+    "id": 3,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Como posso entrar em contato com o IFSUL?",
+    "answer": "É possível entrar em contato com o IFSUL campus Passo Fundo através do telefone (54)2024-0400 ou pelo email pf-corac@ifsul.edu.br"
+  },
+
+{
+    "id": 4,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "O câmpus possui biblioteca e espaços de estudo?",
+    "answer": "O câmpus possui biblioteca com disponibilidade de retirada de livros fisicos, acesso à biblioteca virtual, salas de estudos, além de um espaço com computadores para auxiliar no estudo dos alunos"
+  },
+
+   {
+    "id": 5,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "O câmpus possui refeitório ou cantina?",
+    "answer": "O câmpus Passo Fundo possui cantina acessível e devidamente capacitada pelas diretrizes de alimentação escolar."
+  },
+
+{
+    "id": 6,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Onde acompanho notícias e comunicados do IFSul?",
+    "answer": "É possível acompanhar através do site oficial, e de nosso <a href=https://www.instagram.com/ifsulpassofundo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='>Instagram</a>"
+  },
+
+   {
+    "id": 7,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "O câmpus possui atendimento psicológico ou pedagógico para estudantes?",
+    "answer": "O câmpus conta com uma equipe multidisciplinar voltada para a saúde e integridade física e psicológica de seus estudantes. Os alunos possuim acesso a atendimento psicológico, psicopedagógico, entre outros auxílios destinados conforme suas necessidades indíviduais"
+  },
+
+   {
+    "id": 8,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Existem eventos, palestras ou semanas acadêmicas?",
+    "answer": "O câmpus conta com diferentes eventos anuais e semestrais voltados aos alunos e comunidade externa, como semana acadêmica, arena games e congressos. Todos divulgados antecipadamente em nossos meios de divulgação"
+    },
+
+  {
+    "id": 9,
+    "category": "Geral",
+    "subcategory": "Ingresso",
+    "question": "Como faço para ingressar?",
+    "answer": "O ingresso nos cursos ocorre através de processos seletivos (vestibulares) que geralmente acontecem duas vezes ao ano (inverno e verão). Fique atento ao site do IFSul para editais e datas."
+  },
+
+  {
+    "id": 10,
+    "category": "Geral",
+    "subcategory": "Ingresso",
+    "question": "Como realizo minha matrícula?",
+    "answer": ""
+  },
+
+  {
+    "id": 11,
+    "category": "Geral",
+    "subcategory": "Ingresso",
+    "question": "Onde encontro os editais de seleção?",
+    "answer": "É possível encontrar os editais de seleção atráves no nosso <a href='https://passofundo.ifsul.edu.br/'>site</a>, na aba 'Editais'."
+  },
+
+  {
+    "id": 12,
+    "category": "Ciência da Computação",
+    "subcategory": "Candidatos",
+    "question": "Qual a duração do curso de Ciência da Computação?",
+    "answer": "O curso de Bacharelado em Ciência da Computação tem duração média de 4 a 5 anos (8 a 10 semestres)."
+  },
+
+  {
+    "id": 13,
+    "category": "Ciência da Computação",
+    "subcategory": "Candidatos",
+    "question": "Qual o turno das aulas do BCC?",
+    "answer": "As aulas do curso de Ciência da Computação ocorrem predominantemente no turno da manhã."
+  },
+
+ {
+    "id": 14,
+    "category": "Ciência da Computação",
+    "subcategory": "Candidatos",
+    "question": "O curso é presencial?",
+    "answer": "O curso é predominantemente presencial, com algumas disciplinas contando com carga horária EAD"
+  },
+
+  {
+    "id": 15,
+    "category": "Ciência da Computação",
+    "subcategory": "Candidatos",
+    "question": "Preciso saber programar antes de entrar no curso?",
+    "answer": "O curso de Ciência da Computação não exige experiência em programação como pré-requisito. Os primeiros semestres são planejados para ensinar ao aluno toda a base que ele precisa ter para se tornar um bom profissional."
+  },
+
+  {
+    "id": 101,
+    "category": "Ciência da Computação",
+    "subcategory": "Alunos",
+    "question": "Onde encontro o horário das aulas?",
+    "answer": "Os horários das aulas estão disponíveis na seção 'Horários' no menu do curso ou através dos murais no câmpus."
+  },
+
+ {
+    "id": 102,
+    "category": "Ciência da Computação",
+    "subcategory": "Alunos",
+    "question": "Onde encontro o calendário acadêmico??",
+    "answer": "Os calendáio acadêmico está disponível na seção 'Calendário' no menu do site."
+  },
+
+  {
+    "id": 103,
+    "category": "Ciência da Computação",
+    "subcategory": "Alunos",
+    "question": "Como faço para solicitar aproveitamento de disciplinas?",
+    "answer": "O aproveitamento de disciplinas deve ser solicitado na CORAC (Coordenação de Registros Acadêmicos) dentro dos prazos estipulados no calendário acadêmico, apresentando o histórico escolar e as ementas das disciplinas cursadas."
+  },
+
+ {
+    "id": 104,
+    "category": "Ciência da Computação",
+    "subcategory": "Alunos",
+    "question": "Como justifico uma falta?",
+    "answer": "As faltas são justificadas no site do Painel de Sistemas do IFSUL, na seção de Requerimentos"
+  },
+
+  {
+    "id": 105,
+    "category": "Ciência da Computação",
+    "subcategory": "Alunos",
+    "question": "Como encontro oportunidades de estágio?",
+    "answer": "Através dos nossos meios de comunicação, principalmente no nosso <a href='https://passofundo.ifsul.edu.br/estagio'>site</a>, é possível encontrar vagas de estágio e o contato da equipe responsável pela área."
+  },
+
+   {
+    "id": 106,
+    "category": "Ciência da Computação",
+    "subcategory": "Alunos",
+    "question": "Como participar de bolsas, projetos ou monitorias??",
+    "answer": ""
+  },
+
+   {
+    "id": 107,
+    "category": "Ciência da Computação",
+    "subcategory": "Alunos",
+    "question": "Há monitoria de estudos?",
+    "answer": "Sim. Monitoria de lógica e matemática"
+  },
+
+  {
+    "id": 16,
+    "category": "TMSI",
+    "subcategory": "Candidatos",
+    "question": "O que significa curso \"Subsequente\"?",
+    "answer": "A modalidade Subsequente é destinada a quem já concluiu o Ensino Médio e deseja fazer apenas a formação técnica."
+  },
+  {
+    "id": 17,
+    "category": "TMSI",
+    "subcategory": "Candidatos",
+    "question": "Qual a duração do curso técnico?",
+    "answer": "O curso Técnico em Manutenção e Suporte em Informática tem duração média de 3 a 4 semestres (1 ano e meio a 2 anos)."
+  },
+  {
+    "id": 18,
+    "category": "TMSI",
+    "subcategory": "Candidatos",
+    "question": "Qual o turno das aulas do TMSI?",
+    "answer": "As aulas do curso Técnico em Manutenção e Suporte em Informática ocorrem predominantemente no turno da noite."
+  },
+
+{
+    "id": 19,
+    "category": "TMSI",
+    "subcategory": "Candidatos",
+    "question": "O curso é presencial?",
+    "answer": "Sim o curso é Presencial"
+  },
+
+  {
+    "id": 20,
+    "category": "TMSI",
+    "subcategory": "Candidatos",
+    "question": "Há pré-requisitos para os cursos técnicos?",
+    "answer": "O único pré requisito é possuir o ensino médio concluído"
+  },
+
+  {
+    "id": 201,
+    "category": "TMSI",
+    "subcategory": "Alunos",
+    "question": "O estágio é obrigatório?",
+    "answer": "Sim, o estágio curricular supervisionado é obrigatório para a conclusão do curso técnico e obtenção do diploma."
+  },
+  {
+    "id": 202,
+    "category": "TMSI",
+    "subcategory": "Alunos",
+    "question": "Posso usar os laboratórios fora do horário de aula?",
+    "answer": "Sim, os laboratórios podem ser utilizados para estudo e trabalhos nos horários livres, mediante disponibilidade e autorização da coordenação ou professores responsáveis."
+  },
+
+   {
+    "id": 203,
+    "category": "TMSI",
+    "subcategory": "Alunos",
+    "question": "Há monitoria de estudos?",
+    "answer": "Sim. Monitoria de lógica e matemática"
+  }
+]

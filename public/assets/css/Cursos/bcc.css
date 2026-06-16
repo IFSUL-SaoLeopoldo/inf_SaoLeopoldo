@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ifsul-blue: #1a5f3a;
+  --ifsul-blue-light: #2d7a52;
+  --ifsul-blue-dark: #0f4428;
+  --gray-light: #f8f9fa;
+  --text-dark: #212529;
+  --ifsul-blue: #183655;
+  --ifsul-blue-light: #1f4a6d;
+  --ifsul-blue-dark: #11213f;
+}
+
+
+#time {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: calc(100vh - 76px);
+  padding: 4rem 0;
+}
+
+.btn-wrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 20px;
+}
+.btn-cta {
+    background: white;
+    color: var(--ifsul-blue);
+    padding: 15px 50px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--ifsul-blue);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ifsul-blue) 0%, var(--ifsul-blue-light) 100%);
+  border-radius: 2px;
+}
+
+
+.section-description {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin-bottom: 2rem;
+}
+
+
+hr.my-4 {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--ifsul-blue-light) 50%, transparent 100%);
+  margin: 2.5rem 0;
+}
+
+.card-front {
+  background: white;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.card-container:hover .card-front {
+  border-color: var(--ifsul-blue-light);
+}
+
+.card-front .event-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  border: none;
+  box-shadow: none;
+}
+
+.event-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--ifsul-blue);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.text-justify {
+  text-align: justify;
+  hyphens: auto;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+.card-back {
+
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.download-link {
+  background: white;
+  color: var(--ifsul-blue);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.download-link:hover {
+  background: var(--gray-light);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: var(--ifsul-blue-dark);
+}
+
+.download-link i {
+  font-size: 1.5rem;
+}
+
+.download-link h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+
+.discipline-info p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.discipline-info i {
+  font-size: 1.1rem;
+  color: var(--ifsul-blue);
+}
+
+
+
+.nav-pills {
+  background: white;
+  padding: 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  gap: 0.5rem;
+}
+
+.nav-pills .nav-link {
+  border-radius: 50px;
+  padding: 0.8rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.nav-pills .nav-link:hover {
+  background: rgba(26, 95, 58, 0.1);
+  color: var(--ifsul-blue);
+}
+
+.nav-pills .nav-link.active {
+  background: linear-gradient(135deg, var(--ifsul-blue) 0%, var(--ifsul-blue-light) 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(26, 95, 58, 0.3);
+}
+
+.bi.bi-clock-fill.text-primary {
+  color: var(--ifsul-blue) !important;
+}
+
+
+
+a.name {
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: #2c3e50 !important;
+}
+
+
+@media (max-width: 768px) {
+  #time {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+.card-container {
+    height: 340px; 
+    margin-bottom: 1.5rem;
+  }
+
+  .event-title {
+    font-size: 1rem;
+  }
+
+  .text-justify {
+    font-size: 0.85rem;
+  }
+
+  .nav-pills {
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 0.3rem;
+  }
+
+  .nav-pills .nav-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  iframe[title="Horários TMSI"] {
+    height: 500px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .card-container {
+   height: 400px;
+  }
+  .card-front .event-card {
+    padding: 1rem; 
+  }
+  .text-justify {
+    font-size: 0.85rem; 
+    line-height: 1.4;
+  }
+  
+ 
+  .event-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+  }
+
+  .download-link {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .download-link h5 {
+    font-size: 0.9rem;
+  }
+}
+
+.col-md-4:first-child .card-front {
+  border-color: var(--ifsul-blue-light);
+  background: linear-gradient(135deg, rgba(26, 95, 58, 0.03) 0%, white 100%);
+}
+
+
+.discipline-info strong {
+  color: var(--ifsul-blue);
+  font-weight: 600;
+}
+
+
+#time .container {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+
+}

@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/img/IV.ico">
+    <title>Inf - Portal da Informática - Grade Ciência da Computação</title> <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/common/header.css">
+    <link rel="stylesheet" href="../../assets/css/common/footer.css">
+    <link rel="stylesheet" href="../../assets/css/common/animation.css">
+    <link rel="stylesheet" href="../../assets/css/Cursos/bcc.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('../header-new/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                ajustarNavbar();
+            });
+
+        function ajustarNavbar() {
+            let path = window.location.pathname;
+            let isHome = path.includes("/home/index.html") || path.endsWith("/home/");
+            let navLinks = document.querySelector(".navbar-nav");
+
+            if (!isHome) {
+                let homeLink = navLinks.querySelector("a[href='#home']");
+                if (homeLink) homeLink.setAttribute("href", "/src/home/index.html");
+
+                let scheduleLink = navLinks.querySelector("a[href='#programacao']");
+                if (scheduleLink) scheduleLink.setAttribute("href", "/src/programacao/index.html");
+
+                let contatoLink = navLinks.querySelector("a[href='#contato']");
+                if (contatoLink) contatoLink.closest("li").remove();
+
+                let arenaLink = navLinks.querySelector("a[href='#arena']");
+                if (arenaLink) arenaLink.setAttribute("href", "../arenagame/index.html");
+            }
+        }
+    </script>
+    <main>
+
+
+        <section id="time" class="py-5 bg-light" style="margin-top: 50px;">
+            <div class="container">
+                <h2 class="section-title">Grade Curricular Matriz 2023</h2>
+                <p class="section-description mb-4">Conheça as disciplinas de cada semestre do curso</p>
+                <hr class="my-4">
+
+                <div class="btn-wrapper mt-3 mt-md-0">
+                    <a href="../../assets/docs/bcc/DisciplinasBCC2023.zip" class="btn-cta"> <i class="bi bi-download me-2"></i>Grade Completa</a>
+                </div>
+
+                <!-- Navegação por Abas -->
+                <ul class="nav nav-pills mb-4 justify-content-center flex-wrap" id="semesterTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="sem1-tab" data-bs-toggle="pill" data-bs-target="#sem1"
+                            type="button" role="tab">1º Semestre</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sem2-tab" data-bs-toggle="pill" data-bs-target="#sem2"
+                            type="button" role="tab">2º Semestre</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sem3-tab" data-bs-toggle="pill" data-bs-target="#sem3"
+                            type="button" role="tab">3º Semestre</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sem4-tab" data-bs-toggle="pill" data-bs-target="#sem4"
+                            type="button" role="tab">4º Semestre</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sem5-tab" data-bs-toggle="pill" data-bs-target="#sem5"
+                            type="button" role="tab">5º Semestre</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sem6-tab" data-bs-toggle="pill" data-bs-target="#sem6"
+                            type="button" role="tab">6º Semestre</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sem7-tab" data-bs-toggle="pill" data-bs-target="#sem7"
+                            type="button" role="tab">7º Semestre</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sem8-tab" data-bs-toggle="pill" data-bs-target="#sem8"
+                            type="button" role="tab">8º Semestre</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="eletivas-tab" data-bs-toggle="pill" data-bs-target="#eletivas"
+                            type="button" role="tab">Eletivas</button>
+                    </li>
+                </ul>
+
+                <!-- Conteúdo das Abas -->
+                <div class="tab-content" id="semesterTabsContent">
+
+                    <!-- 1º Semestre -->
+                    <div class="tab-pane fade show active" id="sem1" role="tabpanel">
+                        <div class="row g-4">
+                            <!-- Algoritmos I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Algoritmos I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/primeiro_semestre/PF_CC_1_Algoritmos_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Introdução à História e Conceitos da Computação -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Introdução à História e Conceitos da
+                                                    Computação</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/primeiro_semestre/PF_CC_2_Introducao_Historia_Conceitos_Computacao.pdf"
+                                               class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Matemática Discreta -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Matemática Discreta</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/primeiro_semestre/PF_CC_3_Matematica_Discreta.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Circuitos Digitais -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Circuitos Digitais</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/primeiro_semestre/PF_CC_4_ Circuitos_Digitais.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Criação de Páginas WEB -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Criação de Páginas WEB</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 60h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/primeiro_semestre/PF_CC_5_ Criacao_Paginas_Web.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Língua Portuguesa -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Leitura e Produção Textual Acadêmica</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/primeiro_semestre/PF_CC_6_ Leitura_e_Producao_Textual_Academica.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2º Semestre -->
+                    <div class="tab-pane fade" id="sem2" role="tabpanel">
+                        <div class="row g-4">
+                            <!-- Algoritmos II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Algoritmos II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/segundo_semestre/PF_CC_7_Algoritmos_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sociedade e Tecnologia -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Sociedade e Tecnologia</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/segundo_semestre/PF_CC_8_Sociedade_Tecnologia.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Arquitetura de Computadores I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Arquitetura de Computadores I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/segundo_semestre/PF_CC_9_Arquitetura_Computadores_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cálculo Diferencial e Integral I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Cálculo Diferencial e Integral I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/segundo_semestre/PF_CC_10_Calculo_Diferencial_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fundamentos de Eletricidade e Eletrônica -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Fundamentos de Eletricidade e Eletrônica
+                                                </h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/segundo_semestre/PF_CC_11_Fundamentos_Eletricidade.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comunicação em Língua Inglesa -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Comunicação em Língua Inglesa</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/segundo_semestre/PF_CC_12_Comunicacao_Lingua_Inglesa.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 3º Semestre -->
+                    <div class="tab-pane fade" id="sem3" role="tabpanel">
+                        <div class="row g-4">
+                            <!-- Estrutura de Dados I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Estrutura de Dados I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/terceiro_semestre/PF_CC_13_Estrutura_Dados_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Arquitetura de Computadores II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Arquitetura de Computadores II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/terceiro_semestre/PF_CC_14_Arquitetura_Computadores_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cálculo Diferencial e Integral II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Cálculo Diferencial e Integral II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/terceiro_semestre/PF_CC_15_Calculo_Diferencial_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tecnologia de Orientação a Objetos -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Tecnologia de Orientação a Objetos</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/terceiro_semestre/PF_CC_16_Tecnologia_de_Orientacao_a_objetos.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Banco de Dados I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Banco de Dados I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/terceiro_semestre/PF_CC_17_Banco_Dados_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Leitura em Língua Inglesa -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Leitura em Língua Inglesa</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/terceiro_semestre/PF_CC_18_Leitura_Lingua_Inglesa.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Práticas Curriculares Sociedade I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Práticas Curriculares Sociedade I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/terceiro_semestre/PF_CC_19_Praticas_Curriculares_Sociedade_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4º Semestre -->
+                    <div class="tab-pane fade" id="sem4" role="tabpanel">
+                        <div class="row g-4">
+                            <!-- Estrutura de Dados II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Estrutura de Dados II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quarto_semestre/PF_CC_20_Estrutura_Dados_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Linguagem de Programação Orientada a Objetos -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Linguagem de Programação Orientada a
+                                                    Objetos</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quarto_semestre/PF_CC_21_Linguagem_Programacao_Orientada_Objetos.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Redes de Computadores I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Redes de Computadores I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quarto_semestre/PF_CC_22_Redes_Computadores_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sistemas Operacionais I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Sistemas Operacionais I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 60h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quarto_semestre/PF_CC_23_Sistemas_Operacionais_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Banco de Dados II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Banco de Dados II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quarto_semestre/PF_CC_24_Banco_Dados_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Análise e Projeto de Sistemas -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Análise e Projeto de Sistemas</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 60h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quarto_semestre/PF_CC_25_Analise_Projeto_Sistemas.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Práticas Curriculares Sociedade II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Práticas Curriculares Sociedade II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quarto_semestre/PF_CC_26_Praticas_Curriculares_Sociedade_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 5º Semestre -->
+                    <div class="tab-pane fade" id="sem5" role="tabpanel">
+                        <div class="row g-4">
+                            <!-- Estrutura de Dados III -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Estrutura de Dados III</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quinto_semestre/PF_CC_27_Estrutura_Dados_III.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Programação para WEB -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Programação para WEB</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quinto_semestre/PF_CC_28_Programacao_Web.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Redes de Computadores II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Redes de Computadores II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quinto_semestre/PF_CC_29_Redes_Computadores_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sistemas Operacionais II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Sistemas Operacionais II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quinto_semestre/PF_CC_30_Sistemas_Operacionais_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Teoria da Computação -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Teoria da Computação</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quinto_semestre/PF_CC_31_Teoria_Computacao.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Álgebra Linear e Geometria Analítica -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Álgebra Linear e Geometria Analítica</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 60h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quinto_semestre/PF_CC_32_Algebra_Linear_Geometria_Analitica.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Práticas Curriculares Sociedade III -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Práticas Curriculares Sociedade III</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/quinto_semestre/PF_CC_33_Praticas_Curriculares_Sociedade_III.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6º Semestre -->
+                    <div class="tab-pane fade" id="sem6" role="tabpanel">
+                        <div class="row g-4">
+                            <!-- Inteligência Artificial -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Inteligência Artificial</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/sexto_semestre/PF_CC_35_Inteligencia_Artificial.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sistemas Distribuídos I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Sistemas Distribuídos I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/sexto_semestre/PF_CC_34_Sistemas_Distribuidos_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Segurança em Redes de Computadores -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Segurança em Redes de Computadores</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/sexto_semestre/PF_CC_39_Seguranca_Redes_Computadores.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Análise e Complexidade de Algoritmos -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Análise e Complexidade de Algoritmos</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/sexto_semestre/PF_CC_36_Analise_Complexidade_Algoritmos.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Metodologia da Pesquisa -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Metodologia da Pesquisa</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/sexto_semestre/PF_CC_37_Metodologia_Pesquisa.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Computação Gráfica -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Computação Gráfica</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/sexto_semestre/PF_CC_38_Computacao_Grafica.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Práticas Curriculares Sociedade IV -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Práticas Curriculares Sociedade IV</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/sexto_semestre/PF_CC_40_Praticas_Curriculares_Sociedade_IV.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 7º Semestre -->
+                    <div class="tab-pane fade" id="sem7" role="tabpanel">
+                        <div class="row g-4">
+                            <!-- Sistemas Distribuídos II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Sistemas Distribuídos II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/setimo_semestre/PF_CC_41_Sistemas_Distribuidos_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engenharia de Software -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Engenharia de Software</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/setimo_semestre/PF_CC_43_Engenharia_Software.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Compiladores -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Compiladores</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/setimo_semestre/PF_CC_44_Compiladores.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Estatística e Probabilidade -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Probabilidade e Estatística</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/setimo_semestre/PF_CC_45_Probabilidade_e_estatistica.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Trabalho de Conclusão I -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Trabalho de Conclusão I</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/setimo_semestre/PF_CC_46_Trabalho_Conclusao_I.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Serviços WEB -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Serviços Web</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/setimo_semestre/PF_CC_42_Servicos_Web.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Práticas Curriculares Sociedade V -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Práticas Curriculares Sociedade V</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/setimo_semestre/PF_CC_47_Praticas_Curriculares_Sociedade_V.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- 8º Semestre -->
+                    <div class="tab-pane fade" id="sem8" role="tabpanel">
+                        <div class="row g-4">
+                            <!-- Gestão Empresarial Empreededorismo  -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Gestão Empresarial e Empreededorismo </h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/oitavo_semestre/PF_CC_48_Gestao_Empresarial_Empreendedorismo.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Trabalho de Conclusão II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Trabalho de Conclusão II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/oitavo_semestre/PF_CC_49_Trabalho_Conclusao_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Eletivas -->
+                    <div class="tab-pane fade" id="eletivas" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Modelagem e Simulação Discreta</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_50_Modelagem_Simulacao.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Tecnologias de Desenvolvimento Mobile</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_51_Tecnologias_Desenvolvimento_Mobile.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Tópicos em Banco de Dados</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_52_Topicos_Banco_de_Dados.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Programação para WEB II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_53_Programacao_WEB_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Linguagens de Programação Emergentes</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_54_Linguagens_Programacao_Emergentes.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Sistemas Multi-Agentes Aplicados à Robótica
+                                                </h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_55_Sistemas_Multiagentes_Aplicados_Robotica.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Direitos Humanos, Ética, Cidadania e Meio
+                                                    Ambiente</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_59_Direitos_humanos_Etica_Cidadania_Meio_Ambiente.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Fundamentos Big Data</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_60_Fundamentos_big_data.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Sistemas Embarcados e Autômação</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_56_Sistemas_Embarcados_e_Automacao.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Desenvolvimento de Jogos Digitais</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_57_Desenvolvimento_de_Jogos_Digitais.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3"> Processamento de Imagens</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_58_Processamento_de_Imagens.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Internet das Coisas </h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_61_Internet_das_coisas.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Robótica</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_62_Robotica.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Computação Quântica</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_63_Computacao_Quantica.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Computação Científica e Cálculo Numérico</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 30h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/eletivas/PF_CC_64_Computacao_Cientifica_Calculo_Numerico.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- /tab-content -->
+            </div> <!-- /container -->
+        </section>
+
+        <section id="time2" class="py-5 bg-light" style="margin-top: 50px;">
+            <div class="container">
+                <h2 class="section-title">Grade Curricular Matriz 2017</h2>
+                <p class="section-description mb-4">Conheça as disciplinas de cada semestre do curso</p>
+                <hr class="my-4">
+
+                <div class="btn-wrapper mt-3 mt-md-0">
+                    <a href="../../assets/docs/bcc/DisciplinasBCC2017.zip" class="btn-cta"> <i class="bi bi-download me-2"></i>Grade Completa</a>
+                </div>
+
+                <!-- Navegação por Abas -->
+                <ul class="nav nav-pills mb-4 justify-content-center flex-wrap" id="semesterTabs2" role="tablist">
+                    
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sem8-tab2" data-bs-toggle="pill" data-bs-target="#sem82"
+                            type="button" role="tab">8º Semestre</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="eletivas-tab2" data-bs-toggle="pill" data-bs-target="#eletivas2"
+                            type="button" role="tab">Eletivas</button>
+                    </li>
+                </ul>
+
+                <!-- Conteúdo das Abas -->
+                <div class="tab-content" id="semesterTabsContent2">
+
+                    <!-- 8º Semestre -->
+                    <div class="tab-pane fade" id="sem82" role="tabpanel">
+                        <div class="row g-4">
+                            <!-- Empreededorismo  -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Empreededorismo </h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/oitavo_semestre/PF_CC_45_Empreendedorismo.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Serviços WEB  -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Serviços WEB </h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 45h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/oitavo_semestre/PF_CC_44_Servicos_Web.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Trabalho de Conclusão II -->
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Trabalho de Conclusão II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/oitavo_semestre/PF_CC_46_Trabalho_Conclusao_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Eletivas -->
+                    <div class="tab-pane fade" id="eletivas2" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Modelagem e Simulação Discreta</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/eletivas/PF_CC_47_Modelagem_Simulacao.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Tecnologias de Desenvolvimento Mobile</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/eletivas/PF_CC_48_Tecnologias_Desenvolvimento.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Tópicos em Banco de Dados</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 60h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/eletivas/PF_CC_51_Topicos_Banco.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Programação para WEB II</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 60h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/eletivas/PF_CC_52_Programacao_WEB_II.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Linguagens de Programação Emergentes</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/eletivas/PF_CC_49_Linguagens_Programacao.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Sistemas Multi-Agentes Aplicados à Robótica
+                                                </h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 75h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/eletivas/PF_CC_50_Sistemas_Multiagentes.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card-container">
+                                    <div class="card-inner">
+                                        <div class="card-front">
+                                            <div class="event-card">
+                                                <h5 class="event-title mb-3">Direitos Humanos, Ética, Cidadania e Meio
+                                                    Ambiente</h5>
+                                                <div class="discipline-info">
+                                                    <p class="mb-2"><i class="bi bi-clock-fill text-primary"></i>
+                                                        <strong>Carga Horária:</strong> 60h
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-back">
+                                            <a href="../../assets/docs/bcc/ementas/matriz_2017/eletivas/PF_CC_53_Direitos humanos, ética e cidadania e meio ambiente.pdf"
+                                                class="btn-secondary download-link">
+                                                <i class="mb-2 bi bi-download"></i>
+                                                <h5>Baixar Ementa</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div> <!-- /tab-content -->
+            </div> <!-- /container -->
+        </section>
+
+        <div id="footer-placeholder"></div>
+        <script>
+            fetch('../footer/index.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        </script>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/animation.js"></script>
+    <!-- Script de Autenticação SUAP -->
+    <script src="../../assets/js/suap-auth.js"></script>
+</body>
+
+</html>

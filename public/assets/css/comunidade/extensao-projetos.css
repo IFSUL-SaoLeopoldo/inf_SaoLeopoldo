@@ -1,0 +1,160 @@
+/* ============================================================
+   extensao-projetos.css
+   Estilos para a seção de projetos de extensão na página de comunidade
+   complementa comunidade.css.
+   ============================================================ */
+
+/* Seção wrapper */
+.projetos-extensao-section {
+    padding: 80px 0 40px;
+    background: #ffffff;
+}
+
+/* Reutiliza .group-card mas adiciona variação para projeto */
+.projeto-card {
+    border-left-color: #2d7a52;
+    position: relative;
+}
+
+/* Banner com badge de status sobreposto */
+.projeto-banner {
+    position: relative;
+}
+
+.projeto-banner-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f4428, #2d7a52);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 5rem;
+}
+
+.projeto-status-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    backdrop-filter: blur(6px);
+}
+
+.projeto-status--andamento {
+    background: rgba(26, 95, 58, 0.85);
+    color: #fff;
+}
+
+.projeto-status--finalizado {
+    background: rgba(80, 80, 80, 0.8);
+    color: #fff;
+}
+
+/* Linha de avatares de membros */
+.projeto-membros-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.projeto-membros-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.projeto-membro-item {
+    margin-left: -8px;
+}
+
+.projeto-membro-item:first-child {
+    margin-left: 0;
+}
+
+.projeto-membro-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.projeto-membro-avatar--fallback {
+    background: linear-gradient(135deg, #1a5f3a, #2d7a52);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projeto-membro-avatar--extra {
+    background: #e8f4ee;
+    color: #1a5f3a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projeto-membros-label {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Botão outline para "Ver Detalhes" */
+.btn-group--outline {
+    background: transparent;
+    border: 2px solid #1a5f3a;
+    color: #1a5f3a;
+}
+
+.btn-group--outline:hover {
+    background: linear-gradient(135deg, #1a5f3a, #2d7a52);
+    color: white;
+    border-color: transparent;
+}
+
+/* Estado de loading / erro */
+#projetos-extensao-lista .text-muted {
+    color: #999;
+    font-size: 1rem;
+}
+
+/* Animação de entrada dos cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.projeto-card {
+    animation: fadeInUp 0.4s ease both;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .projetos-extensao-section {
+        padding: 50px 0 20px;
+    }
+
+    .projeto-status-badge {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+    }
+}

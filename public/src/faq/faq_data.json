@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Onde fica o IFSul Câmpus São Leopoldo?",
+    "answer": "O IFSul Câmpus São Leopoldo está localizado na Av. Unisinos, 8900 - Cristo Rei, São Leopoldo - RS."
+  },
+  {
+    "id": 2,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Os cursos são gratuitos?",
+    "answer": "Sim! Todos os cursos oferecidos pelo IFSul são totalmente gratuitos, pois somos uma instituição pública federal de ensino."
+  },
+  {
+    "id": 3,
+    "category": "Geral",
+    "subcategory": "Institucional",
+    "question": "Como posso entrar em contato com o IFSUL?",
+    "answer": "Você pode entrar em contato conosco pelo e-mail contato@ifsul.edu.br."
+  },
+  {
+    "id": 4,
+    "category": "Cursos",
+    "subcategory": "Desenvolvimento de Sistemas",
+    "question": "O que é o curso Técnico Subsequente em Desenvolvimento de Sistemas?",
+    "answer": "É um curso técnico voltado para quem já concluiu o ensino médio e deseja atuar na área de tecnologia. O curso capacita o estudante a projetar, desenvolver e implementar sistemas computacionais para plataformas desktop, web e mobile, além de modelar banco de dados e aplicar engenharia de software."
+  }
+]

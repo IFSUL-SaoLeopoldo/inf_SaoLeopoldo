@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/img/IV.ico">
+    <title>Organograma - Ciência da Computação - IFSul</title> <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/common/header.css">
+    <link rel="stylesheet" href="../../assets/css/common/footer.css">
+    <link rel="stylesheet" href="../../assets/css/organograma/organograma_BCC.css">
+</head>
+<body>
+ <div id="header-placeholder"></div>
+    <script>
+         fetch('../header-new/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                ajustarNavbar();
+            });
+
+        function ajustarNavbar() {
+            let path = window.location.pathname;
+            let isHome = path.includes("/home/index.html") || path.endsWith("/home/");
+
+            let navLinks = document.querySelector(".navbar-nav");
+
+            if (!isHome) {
+                let homeLink = navLinks.querySelector("a[href='#home']");
+                if (homeLink) homeLink.setAttribute("href", "/src/home/index.html");
+
+                let scheduleLink = navLinks.querySelector("a[href='#programacao']");
+                if (scheduleLink) scheduleLink.setAttribute("href", "/src/programacao/index.html");
+
+                let contatoLink = navLinks.querySelector("a[href='#contato']");
+                if (contatoLink) contatoLink.closest("li").remove();
+
+                let arenaLink = navLinks.querySelector("a[href='#arena']");
+                if (arenaLink) arenaLink.setAttribute("href", "../arenagame/index.html");
+            }
+        }
+    </script>
+
+    <main>
+        
+        <section class="page-header">
+            <div class="container text-center">
+                <h1><i class="bi bi-diagram-3"></i> Matriz de Pré-requisitos <hr> Bacharelado em Ciência da Computação</h1>
+                <p>Matriz 2023</p>
+            </div>
+        </section>
+
+        
+        <div class="container">
+            <div class="instructions-card">
+                <h5><i class="bi bi-info-circle-fill text-success"></i> Como usar</h5>
+                <p><strong>Clique</strong> em uma disciplina para visualizar seus pré-requisitos (amarelo) e disciplinas dependentes (azul claro). Clique novamente na mesma disciplina ou no botão "Limpar Seleção" para desmarcar.</p>
+                
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-box normal"></div>
+                        <span>Disciplina</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box selected"></div>
+                        <span>Selecionada</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box prerequisite"></div>
+                        <span>Pré-requisito</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box dependent"></div>
+                        <span>Dependente</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box inactive"></div>
+                        <span>Sem relação</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <section class="organogram-section">
+            <div class="container" id="organogram">
+                
+                <div class="semester">
+                    <div class="semester-title"><i class="bi bi-1-circle-fill"></i> Primeiro Semestre</div>
+                    <div class="subjects">
+                        <div class="subject" data-id="alg1" data-prereq="">
+                            <div class="subject-name">Algoritmos I</div>
+                        </div>
+                        <div class="subject" data-id="ihcc" data-prereq="">
+                            <div class="subject-name">Introdução à História e Conceitos da Computação</div>
+                        </div>
+                        <div class="subject" data-id="matdisc" data-prereq="">
+                            <div class="subject-name">Matemática Discreta</div>
+                        </div>
+                        <div class="subject" data-id="cirdig" data-prereq="">
+                            <div class="subject-name">Circuitos Digitais</div>
+                        </div>
+                        <div class="subject" data-id="cpw" data-prereq="">
+                            <div class="subject-name">Criação de Páginas WEB</div>
+                        </div>
+                        <div class="subject" data-id="port" data-prereq="">
+                            <div class="subject-name">Leitura e Produção Textual Acadêmica</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="semester">
+                    <div class="semester-title"><i class="bi bi-2-circle-fill"></i> Segundo Semestre</div>
+                    <div class="subjects">
+                        <div class="subject" data-id="alg2" data-prereq="alg1">
+                            <div class="subject-name">Algoritmos II</div>
+                        </div>
+                        <div class="subject" data-id="soct" data-prereq="">
+                            <div class="subject-name">Sociedade e Tecnologia</div>
+                        </div>
+                        <div class="subject" data-id="arq1" data-prereq="cirdig,ihcc">
+                            <div class="subject-name">Arquitetura de Computadores I</div>
+                        </div>
+                        <div class="subject" data-id="calc1" data-prereq="matdisc">
+                            <div class="subject-name">Cálculo Diferencial e Integral I</div>
+                        </div>
+                        <div class="subject" data-id="fe" data-prereq="matdisc,cirdig">
+                            <div class="subject-name">Fundamentos de Eletricidade e Eletrônica</div>
+                        </div>
+                        <div class="subject" data-id="ing1" data-prereq="">
+                            <div class="subject-name">Comunicação em Língua Inglesa</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="semester">
+                    <div class="semester-title"><i class="bi bi-3-circle-fill"></i> Terceiro Semestre</div>
+                    <div class="subjects">
+                        <div class="subject" data-id="ed1" data-prereq="alg2">
+                            <div class="subject-name">Estrutura de Dados I</div>
+                        </div>
+                        <div class="subject" data-id="arq2" data-prereq="arq1">
+                            <div class="subject-name">Arquitetura de Computadores II</div>
+                        </div>
+                        <div class="subject" data-id="calc2" data-prereq="calc1">
+                            <div class="subject-name">Cálculo Diferencial e Integral II</div>
+                        </div>
+                        <div class="subject" data-id="too" data-prereq="alg2">
+                            <div class="subject-name">Tecnologia de Orientação a Objetos</div>
+                        </div>
+                        <div class="subject" data-id="bd1" data-prereq="">
+                            <div class="subject-name">Banco de Dados I</div>
+                        </div>
+                        <div class="subject" data-id="ing2" data-prereq="ing1">
+                            <div class="subject-name">Leitura em Língua Inglesa</div>
+                        </div>
+                        <div class="subject" data-id="pcs1" data-prereq="">
+                            <div class="subject-name">Práticas Curriculares em Sociedade I</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="semester">
+                    <div class="semester-title"><i class="bi bi-4-circle-fill"></i> Quarto Semestre</div>
+                    <div class="subjects">
+                        <div class="subject" data-id="ed2" data-prereq="ed1">
+                            <div class="subject-name">Estrutura de Dados II</div>
+                        </div>
+                        <div class="subject" data-id="lpoo" data-prereq="too,bd1">
+                            <div class="subject-name">Linguagem de Programação Orientada a Objetos</div>
+                        </div>
+                        <div class="subject" data-id="redes1" data-prereq="ihcc">
+                            <div class="subject-name">Redes de Computadores I</div>
+                        </div>
+                        <div class="subject" data-id="so1" data-prereq="">
+                            <div class="subject-name">Sistemas Operacionais I</div>
+                        </div>
+                        <div class="subject" data-id="bd2" data-prereq="bd1">
+                            <div class="subject-name">Banco de Dados II</div>
+                        </div>
+                        <div class="subject" data-id="aps" data-prereq="alg1">
+                            <div class="subject-name">Análise e Projeto de Sistemas</div>
+                        </div>
+                        <div class="subject" data-id="pcs2" data-prereq="pcs1">
+                            <div class="subject-name">Práticas Curriculares em Sociedade II</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="semester">
+                    <div class="semester-title"><i class="bi bi-5-circle-fill"></i> Quinto Semestre</div>
+                    <div class="subjects">
+                        
+                        <div class="subject" data-id="ed3" data-prereq="ed2">
+                            <div class="subject-name">Estrutura de Dados III</div>
+                        </div>
+                        <div class="subject" data-id="pweb" data-prereq="lpoo">
+                            <div class="subject-name">Programação para WEB</div>
+                        </div>
+                        <div class="subject" data-id="redes2" data-prereq="redes1">
+                            <div class="subject-name">Redes de Computadores II</div>
+                        </div>
+                        <div class="subject" data-id="so2" data-prereq="so1,too">
+                            <div class="subject-name">Sistemas Operacionais II</div>
+                        </div>
+                        <div class="subject" data-id="tcomp" data-prereq="ed1,matdisc">
+                            <div class="subject-name">Teoria da Computação</div>
+                        </div>
+                        
+                        <div class="subject" data-id="alga" data-prereq="">
+                            <div class="subject-name">Álgebra Linear e Geometria Analítica</div>
+                        </div>
+                        <div class="subject" data-id="pcs3" data-prereq="pcs2">
+                            <div class="subject-name">Práticas Curriculares em Sociedade III</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="semester">
+                    <div class="semester-title"><i class="bi bi-6-circle-fill"></i> Sexto Semestre</div>
+                    <div class="subjects">
+                        <div class="subject" data-id="sd1" data-prereq="so2,redes1">
+                            <div class="subject-name">Sistemas Distribuídos I</div>
+                        </div>
+                        <div class="subject" data-id="ia" data-prereq="ed3,tcomp">
+                            <div class="subject-name">Inteligência Artificial</div>
+                        </div>
+                         <div class="subject" data-id="aca" data-prereq="ed3,calc2">
+                            <div class="subject-name">Análise e Complexidade de Algoritmos</div>
+                        </div>
+                        <div class="subject" data-id="mp" data-prereq="">
+                            <div class="subject-name">Metodologia da Pesquisa</div>
+                        </div>
+                        <div class="subject" data-id="cg" data-prereq="alga,ed3">
+                            <div class="subject-name">Computação Gráfica</div>
+                        </div>
+
+                        <div class="subject" data-id="src" data-prereq="redes2">
+                            <div class="subject-name">Segurança de Redes de Computadores</div>
+                        </div>
+                       <div class="subject" data-id="pcs4" data-prereq="pcs3">
+                            <div class="subject-name">Práticas Curriculares em Sociedade IV</div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div class="semester">
+                    <div class="semester-title"><i class="bi bi-7-circle-fill"></i> Sétimo Semestre</div>
+                    <div class="subjects">
+                        <div class="subject" data-id="sd2" data-prereq="sd1">
+                            <div class="subject-name">Sistemas Distribuídos II</div>
+                        </div>
+                        <div class="subject" data-id="sweb" data-prereq="pweb,sd1">
+                            <div class="subject-name">Serviços WEB</div>
+                        </div>
+                        
+                        <div class="subject" data-id="comp" data-prereq="tcomp">
+                            <div class="subject-name">Compiladores</div>
+                        </div>
+                        <div class="subject" data-id="es" data-prereq="aps">
+                            <div class="subject-name">Engenharia de Software</div>
+                        </div>
+                        <div class="subject" data-id="estat" data-prereq="">
+                            <div class="subject-name">Probabilidade e Estatística</div>
+                        </div>
+                        <div class="subject" data-id="tcc1" data-prereq="mp,pcs4,cg,src,aca,ia,sd1,pweb,aps,bd2,ing2,arq2,soct,port,cpw,fe">
+                            <div class="subject-name">Trabalho de Conclusão I</div>
+                        </div>
+                        <div class="subject" data-id="pcs5" data-prereq="pcs4">
+                            <div class="subject-name">Práticas Curriculares em Sociedade V</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="semester">
+                    <div class="semester-title"><i class="bi bi-8-circle-fill"></i> Oitavo Semestre</div>
+                    <div class="subjects">
+                        <div class="subject" data-id="elet1" data-prereq="">
+                            <div class="subject-name">Eletiva I</div>
+                        </div>
+                        <div class="subject" data-id="elet2" data-prereq="">
+                            <div class="subject-name">Eletiva II</div>
+                        </div>
+                        <div class="subject" data-id="elet3" data-prereq="">
+                            <div class="subject-name">Eletiva III</div>
+                        </div>
+                        <div class="subject" data-id="elet4" data-prereq="">
+                            <div class="subject-name">Eletiva IV</div>
+                        </div>
+                        <div class="subject" data-id="gest" data-prereq="alg2,soct,arq1,calc1,fe,ing1">
+                            <div class="subject-name">Gestão Empresarial e Empreendedorismo</div>
+                        </div>
+                        <div class="subject" data-id="tcc2" data-prereq="tcc1">
+                            <div class="subject-name">Trabalho de Conclusão II</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="complementary">
+                    <strong><i class="bi bi-star-fill"></i> Atividades Complementares</strong><br>
+                    <small>200 horas ao longo do curso</small>
+                </div>
+                <div class="complementary">
+                    <strong><i class="bi bi-star-fill"></i>Carga Horária de disciplinas eletivas</strong><br>
+                    <small>Somatório das disciplinas eletivas I, II, III e IV: 255h</small>
+                </div>
+                
+            </div>
+        </section>
+
+        
+        <button class="clear-btn" id="clearBtn">
+            <i class="bi bi-x-circle"></i> Limpar Seleção
+        </button>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('../footer/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+   <script>
+        let currentSelected = null; // <-- ADIÇÃO 1: Declarar a variável aqui
+
+        // Dados de pré-requisitos
+        const prerequisites = {};
+        const dependents = {};
+
+        // Inicializar estruturas de dados
+        document.querySelectorAll('.subject').forEach(subject => {
+            const id = subject.dataset.id;
+            const prereqs = subject.dataset.prereq ? subject.dataset.prereq.split(',') : [];
+            
+            prerequisites[id] = prereqs;
+            
+            // Construir dependentes
+            prereqs.forEach(prereq => {
+                if (!dependents[prereq]) {
+                    dependents[prereq] = [];
+                }
+                dependents[prereq].push(id);
+            });
+        });
+
+        // Função para obter todos os pré-requisitos (recursivo)
+        function getAllPrerequisites(id, visited = new Set()) {
+            if (visited.has(id)) return [];
+            visited.add(id);
+            
+            let allPrereqs = [...(prerequisites[id] || [])];
+            
+            prerequisites[id]?.forEach(prereq => {
+                allPrereqs = [...allPrereqs, ...getAllPrerequisites(prereq, visited)];
+            });
+            
+            return [...new Set(allPrereqs)];
+        }
+
+        // Função para obter todos os dependentes (recursivo)
+        function getAllDependents(id, visited = new Set()) {
+            if (visited.has(id)) return [];
+            visited.add(id);
+            
+            let allDeps = [...(dependents[id] || [])];
+            
+            dependents[id]?.forEach(dep => {
+                allDeps = [...allDeps, ...getAllDependents(dep, visited)];
+            });
+            
+            return [...new Set(allDeps)];
+        }
+
+        function highlightRelated(subjectId) {
+   
+            // Agora esta verificação funciona
+            if (currentSelected === subjectId) {
+                clearSelection();
+                return;
+            }
+
+            document.querySelectorAll('.subject').forEach(s => {
+                s.classList.remove('selected', 'prerequisite', 'dependent', 'inactive');
+            });
+
+            if (!subjectId) {
+                currentSelected = null;
+                document.getElementById('clearBtn').classList.remove('show');
+                return;
+            }
+
+            currentSelected = subjectId;
+            document.getElementById('clearBtn').classList.add('show');
+
+            const allPrereqs = getAllPrerequisites(subjectId);
+            const allDeps = getAllDependents(subjectId);
+
+            document.querySelectorAll('.subject').forEach(subject => {
+                const id = subject.dataset.id;
+                
+                if (id === subjectId) {
+                    subject.classList.add('selected');
+                } else if (allPrereqs.includes(id)) {
+                    subject.classList.add('prerequisite');
+                } else if (allDeps.includes(id)) {
+                    subject.classList.add('dependent');
+                } else {
+                    subject.classList.add('inactive');
+                }
+            });
+        }
+
+        function clearSelection() {
+            highlightRelated(null);
+        }
+
+        // --- EVENT LISTENERS ---
+
+        // 1. Clique nas disciplinas
+        document.querySelectorAll('.subject').forEach(subject => {
+            subject.addEventListener('click', () => {
+                const subjectId = subject.dataset.id;
+                highlightRelated(subjectId); // Simplificado: a função highlightRelated já trata o clique duplo
+            });
+        });
+
+        // 2. Clique no botão de limpar
+        document.getElementById('clearBtn').addEventListener('click', clearSelection); // <-- ADIÇÃO 2
+
+        // 3. Adiciona o listener para "clicar fora"
+        document.addEventListener('click', (e) => {
+            // --- CORREÇÃO 2: INÍCIO ---
+            // Verifica se o clique foi dentro do header. Se sim, não faz nada.
+            if (e.target.closest('#header-placeholder')) {
+                return;
+            }
+            if (!e.target.closest('.subject') && !e.target.closest('#clearBtn')) {
+                clearSelection();
+            }
+        });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script de Autenticação SUAP -->
+    <script src="../../assets/js/suap-auth.js"></script>
+</body>
+</html>

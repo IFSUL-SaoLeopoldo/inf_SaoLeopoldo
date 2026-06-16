@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Codepas",
+        "location": ["50%", "33%"],
+        "description": "Confira as<br><i class='bi bi-bus-front-fill'></i> <a href='https://www.codepas.com.br/site/horario-dos-onibus-codepas/' target='_blank'>Linhas e Horários</a>",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRHgUcEU_iqihwOm045s-HQhzNiUNtHeqO9Q&s"
+    },
+    {
+        "name": "Coleurb",
+        "location": ["50%", "75%"],
+        "description": "Confira as<br><i class='bi bi-bus-front-fill'></i> <a href='https://www.coleurb.com.br/site/linhas' target='_blank'>Linhas e Horários</a>",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLA4rkOXEtVS23wL-sjsuwaPSDHeLQq7ry-Q&s"
+    }
+]

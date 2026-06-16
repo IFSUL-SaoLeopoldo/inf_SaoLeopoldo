@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+iframe[title="Horários BCC 2023"] {
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    background: white;
+    transition: all 0.3s ease;
+}
+
+iframe[title="Horários BCC 2017"] {
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    background: white;
+    transition: all 0.3s ease;
+}
+iframe[title="Horários BCC 2023"]:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+iframe[title="Horários BCC 2017"]:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.container > .row > iframe {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 20px;
+}
+
+.col-md-4:first-child .card-front {
+    border-color: var(--ifsul-green-light);
+    background: linear-gradient(135deg, rgba(26, 95, 58, 0.03) 0%, white 100%);
+}
+
+
+.discipline-info strong {
+    color: var(--ifsul-green);
+    font-weight: 600;
+}
+
+
+#time .container {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+
+@media (max-width: 768px) {
+    #time {
+        padding: 2rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .card-container {
+        height: 300px;
+        margin-bottom: 1.5rem;
+    }
+
+    .event-title {
+        font-size: 1rem;
+    }
+
+    .text-justify {
+        font-size: 0.85rem;
+    }
+
+    .nav-pills {
+        flex-direction: column;
+        border-radius: 15px;
+        gap: 0.3rem;
+    }
+
+    .nav-pills .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    iframe[title="Horários TMSI"] {
+        height: 500px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .card-container {
+        height: 320px;
+    }
+
+    .download-link {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .download-link h5 {
+        font-size: 0.9rem;
+    }
+}

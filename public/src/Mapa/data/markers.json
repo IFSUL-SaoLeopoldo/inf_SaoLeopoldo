@@ -1,0 +1,128 @@
+[
+    {
+        "type": "marker",
+        "id": "onibus",
+        "name": "Parada de Ônibus",
+        "location": [-28.24039950486316, -52.35708475112916]
+    },
+    {
+        "type": "label",
+        "name": "P1",
+        "color": "green",
+        "location": [-28.240914625797455, -52.3574508726597]
+    },
+    {
+        "type": "marker",
+        "id": "gabinete",
+        "name": "Gabinete",
+        "location": [-28.240725590881137, -52.35746830701829]
+    },
+    {
+        "type": "marker",
+        "id": "depex",
+        "name": "DEPEX",
+        "location": [-28.240725590881137, -52.35732078552247]
+    },
+    {
+        "type": "marker",
+        "id": "secretaria",
+        "name": "Secretaria",
+        "location": [-28.240860278293322, -52.35732078552247]
+    },
+    {
+        "type": "marker",
+        "id": "assistencia",
+        "name": "Assistência Estudantil",
+        "location": [-28.24087445590578, -52.3575782775879]
+    },
+    {
+        "type": "label",
+        "name": "P2",
+        "color": "blue",
+        "location": [-28.241367459474386, -52.35807985067368]
+    },
+    {
+        "type": "marker",
+        "id": "p2",
+        "name": "Prédio 2",
+        "location": [-28.241167459474386, -52.35807985067368]
+    },
+    {
+        "type": "label",
+        "name": "P3",
+        "color": "blue",
+        "location": [-28.24057048670409, -52.3580825328827]
+    },
+    {
+        "type": "marker",
+        "id": "p3",
+        "name": "Prédio 3",
+        "location": [-28.24077048670409, -52.3580825328827]
+    },
+    {
+        "type": "label",
+        "name": "P4",
+        "color": "red",
+        "location": [-28.240295535198573, -52.35749378800393]
+    },
+    {
+        "type": "marker",
+        "id": "cantina",
+        "name": "Cantina",
+        "location": [-28.24021992083343, -52.35756754875184]
+    },
+    {
+        "type": "marker",
+        "id": "biblioteca",
+        "name": "Biblioteca",
+        "location": [-28.240378238349106, -52.35756754875184]
+    },
+    {
+        "type": "label",
+        "name": "P5",
+        "color": "blue",
+        "location": [-28.24135091897179, -52.35852241516114]
+    },
+    {
+        "type": "marker",
+        "id": "p5",
+        "name": "Prédio 5",
+        "location": [-28.24115091897179, -52.35852241516114]
+    },
+    {
+        "type": "label",
+        "name": "P6",
+        "color": "green",
+        "location": [-28.239762358999882, -52.35734224319458]
+    },
+    {
+        "type": "marker",
+        "id": "p6",
+        "name": "Prédio 6",
+        "location": [-28.239962358999882, -52.35734224319458]
+    },
+    {
+        "type": "label",
+        "name": "P7",
+        "color": "blue",
+        "location": [-28.24049487267559, -52.35850363969803]
+    },
+    {
+        "type": "marker",
+        "id": "p7",
+        "name": "Prédio 7",
+        "location": [-28.24069487267559, -52.35850363969803]
+    },
+    {
+        "type": "area",
+        "id": "ensmedio",
+        "name": "Salas Modulares",
+        "locations": [
+            [-28.240919351666076, -52.3579028248787],
+            [-28.240815382508163, -52.35778748989106],
+            [-28.240815382508163, -52.35759973526002],
+            [-28.24107530521295, -52.35759437084199],
+            [-28.24107530521295, -52.35784381628037]
+        ]
+    }
+]

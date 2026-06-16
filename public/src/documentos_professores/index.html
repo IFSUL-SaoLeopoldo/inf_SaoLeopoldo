@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/img/IV.ico">
+    <title>Documentos Professores - IFSul Câmpus Passo Fundo</title> <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/common/header.css">
+    <link rel="stylesheet" href="../../assets/css/common/footer.css">
+    <link rel="stylesheet" href="../../assets/css/documentos.css">
+</head>
+
+<body>
+    <!-- CABEÇALHO -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('../header-new/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <main class="documentos-page">
+        <!-- CABEÇALHO DA SEÇÃO -->
+        <section class="page-header">
+            <div class="container text-center">
+                <h1 class="page-title">Documentos - Professores</h1>
+                <p class="page-description">Área restrita para gerenciamento de documentos e arquivos importantes.</p>
+                <!-- Botão Adicionar -->
+                <button class="btn btn-add-doc" data-bs-toggle="modal" data-bs-target="#modalDocumento" id="btn-novo-documento" style="display: none;">
+                    <i class="bi bi-file-earmark-plus"></i> Novo Documento
+                </button>
+            </div>
+        </section>
+
+        <!-- CONTAINER DOS CARDS -->
+        <section class="documentos-section">
+            <div class="container">
+                <div id="documentos-list" class="row">
+                    <!-- Cards serão renderizados aqui pelo JS -->
+                    <div class="text-center mt-5" id="loading-message">
+                        <div class="spinner-border text-success" role="status">
+                            <span class="visually-hidden">Carregando...</span>
+                        </div>
+                        <p class="mt-2">Carregando documentos...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL DE DOCUMENTO (Criar/Editar) -->
+    <div class="modal fade" id="modalDocumento" tabindex="-1" aria-labelledby="modalDocumentoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="form-documento">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDocumentoLabel">Adicionar Documento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="doc-id" name="doc-id">
+                        
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Título do Documento</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label">Descrição (Breve)</label>
+                            <textarea class="form-control" id="descricao" name="descricao" rows="3" required></textarea>
+                        </div>
+
+                        <div class="mb-3" id="campo-arquivo">
+                            <label for="documento" class="form-label">Arquivo (.pdf, .docx, .xlsx)</label>
+                            <input class="form-control" type="file" id="documento" name="documento" accept=".pdf,.docx,.xlsx" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="btn-salvar-doc">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('../footer/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/suap-auth.js"></script>
+    <script src="../../assets/js/documentos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+ .navbar {
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+ .nav-link {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0f085a;
+} 
+
+ .dropdown-menu {
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 
+
+
+.dropend:hover > .dropdown-menu {
+  display: block;
+  margin-top: .125em;
+}
+
+
+
+ .navbar-toggler {
+  border: none;
+  padding: 0.25rem;
+}
+
+.navbar-toggler i {
+  font-size: 2rem;
+  color: #333;
+} 
+
+
+
+ @media (max-width: 768px) {
+   .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    padding-left: 1rem;
+  } 
+
+
+}
+
+@media screen  and (min-width: 768px) {
+  .dropend:hover > .dropdown-menu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: .125em;
+}
+}
+
+/* ==========================================================================
+   Overrides and fixes for new navbar (header-new/index.html) on pages loading Bootstrap
+   ========================================================================== */
+
+#main-header .dropdown-menu {
+  display: block !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  
+  /* Reset Bootstrap dropdown overrides to match home-new */
+  background: rgba(2, 44, 34, 0.97) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.75rem !important; /* rounded-xl */
+  padding: 0 !important;
+  margin-top: 0.5rem !important; /* mt-2 */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important; /* shadow-2xl */
+  min-width: auto !important;
+  font-size: inherit !important;
+  color: inherit !important;
+}
+
+#main-header .dropdown:hover .dropdown-menu,
+#main-header .dropdown:focus-within .dropdown-menu,
+#main-header .dropdown-menu.js-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0);
+}
+
+#main-header .dropdown-menu ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#main-header a,
+#main-header a:hover {
+  text-decoration: none !important; /* Prevents Bootstrap from underlining nav links on hover */
+}
