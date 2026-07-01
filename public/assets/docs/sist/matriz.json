@@ -1,0 +1,140 @@
+[
+  {
+    "semestre": 1,
+    "titulo": "Primeiro Semestre",
+    "icone": "bi-1-circle-fill",
+    "disciplinas": [
+      {
+        "id": "alg1",
+        "nome": "Algoritmos e lógica de programação",
+        "prereq": "",
+        "chTotal": 180,
+        "chPresencial": 120,
+        "chEAD": 60,
+        "professor": "Vanessa Lago Machado",
+        "ementa": "../../assets/docs/sist/semestre_1/ementa_algoritmos_e_logica_de_programacao.pdf"
+      },
+      {
+        "id": "so",
+        "nome": "Sistemas operacionais",
+        "prereq": "",
+        "chTotal": 60,
+        "chPresencial": 60,
+        "chEAD": 0,
+        "professor": "Ricardo Radaelli Meira",
+        "ementa": "../../assets/docs/sist/semestre_1/ementa_sistemas_operacionais.pdf"
+      },
+      {
+        "id": "ihac",
+        "nome": "Introdução às habilidades acadêmicas",
+        "prereq": "",
+        "chTotal": 60,
+        "chPresencial": 60,
+        "chEAD": 0,
+        "professor": "A definir",
+        "ementa": "../../assets/docs/sist/semestre_1/ementa_introducao_as_habilidades_academicas.pdf"
+      }
+    ]
+  },
+  {
+    "semestre": 2,
+    "titulo": "Segundo Semestre",
+    "icone": "bi-2-circle-fill",
+    "disciplinas": [
+      {
+        "id": "apbd",
+        "nome": "Análise e projeto de banco de dados",
+        "prereq": "",
+        "chTotal": 120,
+        "chPresencial": 120,
+        "chEAD": 0,
+        "professor": "A definir",
+        "ementa": ""
+      },
+      {
+        "id": "ds1",
+        "nome": "Desenvolvimento de sistemas I",
+        "prereq": "",
+        "chTotal": 120,
+        "chPresencial": 120,
+        "chEAD": 0,
+        "professor": "A definir",
+        "ementa": ""
+      },
+      {
+        "id": "dfe",
+        "nome": "Desenvolvimento Front-End",
+        "prereq": "",
+        "chTotal": 60,
+        "chPresencial": 60,
+        "chEAD": 0,
+        "professor": "A definir",
+        "ementa": ""
+      }
+    ]
+  },
+  {
+    "semestre": 3,
+    "titulo": "Terceiro Semestre",
+    "icone": "bi-3-circle-fill",
+    "disciplinas": [
+      {
+        "id": "ds2",
+        "nome": "Desenvolvimento de sistemas II",
+        "prereq": "ds1",
+        "chTotal": 180,
+        "chPresencial": 120,
+        "chEAD": 60,
+        "professor": "A definir",
+        "ementa": ""
+      },
+      {
+        "id": "infr",
+        "nome": "Infraestrutura para aplicações",
+        "prereq": "",
+        "chTotal": 60,
+        "chPresencial": 60,
+        "chEAD": 0,
+        "professor": "A definir",
+        "ementa": ""
+      },
+      {
+        "id": "ge",
+        "nome": "Gestão e empreendedorismo",
+        "prereq": "",
+        "chTotal": 60,
+        "chPresencial": 60,
+        "chEAD": 0,
+        "professor": "A definir",
+        "ementa": ""
+      }
+    ]
+  },
+  {
+    "semestre": 4,
+    "titulo": "Quarto Semestre",
+    "icone": "bi-4-circle-fill",
+    "disciplinas": [
+      {
+        "id": "proj",
+        "nome": "Projeto de sistemas",
+        "prereq": "",
+        "chTotal": 180,
+        "chPresencial": 120,
+        "chEAD": 60,
+        "professor": "A definir",
+        "ementa": ""
+      },
+      {
+        "id": "si",
+        "nome": "Segurança da informação",
+        "prereq": "",
+        "chTotal": 120,
+        "chPresencial": 120,
+        "chEAD": 0,
+        "professor": "A definir",
+        "ementa": ""
+      }
+    ]
+  }
+]

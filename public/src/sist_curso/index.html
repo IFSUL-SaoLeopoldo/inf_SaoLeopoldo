@@ -27,7 +27,7 @@
                 ajustarNavbar();
             });
 
-        function ajustarNavbar() {
+        /*function ajustarNavbar() {
             let path = window.location.pathname;
             let isHome = path.includes("/home/index.html") || path.endsWith("/home/");
             let navLinks = document.querySelector(".navbar-nav");
@@ -46,6 +46,7 @@
                 if (arenaLink) arenaLink.setAttribute("href", "../arenagame/index.html");
             }
         }
+            */
     </script>
 
     <main>
@@ -54,18 +55,18 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 hero-content">
-                        <span class="hero-badge">TÉCNICO SUBSEQUÊNTE</span>
+                        <span class="hero-badge">TÉCNICO SUBSEQUENTE</span>
                         <h1 class="hero-title">Técnico Subsequente em Desenvolvimento de Sistemas</h1>
                         <p class="hero-subtitle">Transforme sua paixão por tecnologia em uma carreira de sucesso na área de desenvolvimento de software com o curso técnico do IFSul.</p>
 
-                        <!-- <a class="btn-encerrada" target="_blank"> <i class="bi bi-pencil-square me-2"></i>Inscrições
+                         <a class="btn-encerrada" target="_blank"> <i class="bi bi-pencil-square me-2"></i>Inscrições
                             encerradas</a>
-                        <a href="#FAQ" class="btn-cta">Saiba mais</a> -->
+                        <a href="#FAQ" class="btn-cta">Saiba mais</a> 
                         <!-- <a href="https://processoseletivo.ifsul.edu.br/" class="btn-cta" target="_blank"> <i class="bi bi-pencil-square me-2"></i>Inscrições Aqui!</a> -->
-                        <a class="btn-encerrada" style="background-color: rgba(27, 172, 27, 0.164); cursor: default;">
+                        <!-- <a class="btn-encerrada" style="background-color: rgba(27, 172, 27, 0.164); cursor: default;">
 
                             Inscrições abertas até 14/05/2026
-                        </a>
+                        </a> -->
                         <!-- ---------- -->
 
                         <!-- Botão Saiba mais Removido pois não há link de vestibular fornecido -->
@@ -135,26 +136,26 @@
                         <div class="card-conteudo">
                             <img src="https://cdn.prod.website-files.com/684b3a171f24ed59da1346e6/684b3a171f24ed59da134b54_timer.svg"
                                 alt="Ícone">
-                            <span>1020 horas</span>
+                            <span>1200 horas</span>
                         </div>
                     </fieldset>
 
                     </fieldset>
                     <fieldset class="card-info-curso">
-                        <legend class="card-titulo">Contato Curso</legend>
-                        <div class="card-conteudo">
-                            <img src="https://img.icons8.com/ios/50/phone--v1.png" alt="Ícone">
-                            <span>contato@ifsul.edu.br</span>
-                            <!-- <span>rafaelbertei@ifsul.edu.br</span> -->
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="card-info-curso">
-                        <legend class="card-titulo">Duração Máxima</legend>
+                        <legend class="card-titulo">Duração</legend>
                         <div class="card-conteudo">
                             <img src="https://cdn.prod.website-files.com/684b3a171f24ed59da1346e6/684b3a171f24ed59da134b55_waiting.svg"
                                 alt="Ícone">
-                            <span>6 semestres </span>
+                            <span>4 semestres </span>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="card-info-curso">
+                        <legend class="card-titulo">Prazo máximo de integralização</legend>
+                        <div class="card-conteudo">
+                            <img src="https://cdn.prod.website-files.com/684b3a171f24ed59da1346e6/684b3a171f24ed59da134b55_waiting.svg"
+                                alt="Ícone">
+                            <span>8 semestres </span>
                         </div>
                     </fieldset>
 
@@ -163,7 +164,7 @@
                         <div class="card-conteudo">
                             <img src="https://cdn.prod.website-files.com/684b3a171f24ed59da1346e6/684b3a171f24ed59da134b59_degrees.svg"
                                 alt="Ícone">
-                            <span>20 por semestre</span>
+                            <span>40 por semestre</span>
                         </div>
                     </fieldset>
                 </div>
@@ -218,8 +219,13 @@
                                     <div class="about-highlight">
                                         <p>
                                             <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                            Curso reconhecido pelo MEC com excelente infraestrutura e professores
-                                            qualificados
+                                            Curso sem TCC: Mas conta com uma disciplina de Projeto de Sistemas em que o aluno será mentorado para desenvolver um projeto integrando os conhecimentos do curso.
+                                        </p>
+                                    </div>
+                                    <div class="about-highlight">
+                                        <p>
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                            Orientado a projetos: Você não só aprenderá teoria, mas também a aplicará em projetos reais, desenvolvendo habilidades essenciais por meio de projetos práticos.
                                         </p>
                                     </div>
                                     </p>
@@ -281,7 +287,7 @@
             </section>
             </section>
 
-
+            <!--
             <section class="ambientes-section">
                 <div class="container">
                     <div class="section-header">
@@ -349,7 +355,7 @@
                     </div>
                 </div>
             </section>
-
+            -->
 
             <section class="cta-section" id="inscricao">
                 <div class="container">
@@ -379,6 +385,7 @@
                         </p>
                     </div>
                     <div class="docs-grid">
+                        <!--
                         <div class="doc-card">
                             <div class="doc-icon">
                                 <i class="bi bi-clipboard-check"></i>
@@ -387,11 +394,12 @@
                             <p class="doc-description">
                                 Confira a lista dos candidatos aprovados no primeiro processo
                             </p>
-                            <a href="https://processoseletivo.ifsul.edu.br/vestibular-2026-1/resultados-e-chamadas/itemlist/category/2642-passo-fundo"
+                            <a href="https://processoseletivo.ifsul.edu.br/vestibular-2026-2/"
                                 class="doc-link" target="_blank">
                                 Ver resultado <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
+                        -->
                         <div class="doc-card">
                             <div class="doc-icon">
                                 <i class="bi bi-file-pdf"></i>
@@ -400,8 +408,8 @@
                             <p class="doc-description">
                                 Orientações completas para candidatos ao processo seletivo
                             </p>
-                            <a href="https://processoseletivo.ifsul.edu.br/vestibular-2025-1/editais" class="doc-link"
-                                target="_blank">
+                           <a href="https://processoseletivo.ifsul.edu.br/vestibular-2026-2/"
+                                class="doc-link" target="_blank">
                                 Acesse os Editais <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
