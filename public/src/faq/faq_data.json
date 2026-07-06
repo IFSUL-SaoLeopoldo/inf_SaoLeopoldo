@@ -4,7 +4,7 @@
     "category": "Geral",
     "subcategory": "Institucional",
     "question": "Onde fica o IFSul Câmpus São Leopoldo?",
-    "answer": "O IFSul Câmpus São Leopoldo está localizado na Av. Unisinos, 8900 - Cristo Rei, São Leopoldo - RS."
+    "answer": "O IFSul Câmpus São Leopoldo está localizado na Av. São Borja, 1860, bairro Rio Branco, São Leopoldo - RS."
   },
   {
     "id": 2,
@@ -18,13 +18,62 @@
     "category": "Geral",
     "subcategory": "Institucional",
     "question": "Como posso entrar em contato com o IFSUL?",
-    "answer": "Você pode entrar em contato conosco pelo e-mail contato@ifsul.edu.br."
+    "answer": "Você pode entrar em contato conosco pelo e-mail le-depex@ifsul.edu.br, ou pelo contato <a href=\"https://wa.me/555196696572?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20inform%C3%A1tica%20do%20C%C3%A2mpus%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20...\" target=\"_blank\"> (51) 9669-6572. </a>"
   },
   {
     "id": 4,
-    "category": "Cursos",
-    "subcategory": "Desenvolvimento de Sistemas",
+    "category": "Desenvolvimento de Sistemas",
+    "subcategory": "Candidato",
     "question": "O que é o curso Técnico Subsequente em Desenvolvimento de Sistemas?",
     "answer": "É um curso técnico voltado para quem já concluiu o ensino médio e deseja atuar na área de tecnologia. O curso capacita o estudante a projetar, desenvolver e implementar sistemas computacionais para plataformas desktop, web e mobile, além de modelar banco de dados e aplicar engenharia de software."
+  },
+  {
+    "id": 5,
+   "category": "Desenvolvimento de Sistemas",
+    "subcategory": "Candidato",
+    "question": "Como faço para ingressar no curso Técnico Subsequente em Desenvolvimento de Sistemas?",
+    "answer": "O ingresso nos cursos ocorre através de processos seletivos (vestibulares) que geralmente ocorrerá uma vez ao ano (inverno). Fique atento ao site do IFSul para editais e datas. Mais informações clique <a href=\"https://processoseletivo.ifsul.edu.br/\" target=\"_blank\">aqui.</a>"
+  },
+  {
+    "id": 6,
+    "category": "Desenvolvimento de Sistemas",
+    "subcategory": "Alunos",
+    "question": "Como justifico uma falta?",
+    "answer": "As faltas são justificadas no Suap, de acordo com as orientações do documento a seguir: <a href='../../assets/docs/Tutorial_Suap_Cadastro_Justificativas_Falta.pdf'>Justificativa de Faltas</a> "
+  },
+  {
+    "id": 6,
+    "category": "Desenvolvimento de Sistemas",
+    "subcategory": "Candidato",
+    "question": "O curso possui Trabalho de Conclusão de Curso (TCC)?",
+    "answer": "Não, o curso Técnico Subsequente em Desenvolvimento de Sistemas não possui TCC, mas conta com uma disciplina de Projeto de Sistemas em que o aluno será mentorado para desenvolver um projeto integrando os conhecimentos do curso."
+  },
+  {
+    "id": 7,
+    "category": "Desenvolvimento de Sistemas",
+    "subcategory": "Candidato",
+    "question": "O curso possui estágio obrigatório?",
+    "answer": "Não, o curso Técnico Subsequente em Desenvolvimento de Sistemas não possui estágio curricular obrigatório, mas os alunos poderão realizar estágio extra-curricular durante seu período de realização do curso."
+  },
+  {
+    "id": 8,
+    "category": "Desenvolvimento de Sistemas",
+    "subcategory": "Alunos",
+    "question": "Posso realizar estágio extra-curricular durante a realização do curso?",
+    "answer": "Sim, os alunos do curso Técnico Subsequente em Desenvolvimento de Sistemas poderão realizar estágio extra-curricular durante seu período de realização do curso. Para isso, busque o chefe de ensino do Câmpus para orientação sobre documentação."
+  },
+  {
+    "id": 9,
+    "category": "Desenvolvimento de Sistemas",
+    "subcategory": "Alunos",
+    "question": "A partir de que semestre posso buscar \\ iniciar um estágio?",
+    "answer": "O curso Técnico Subsequente em Desenvolvimento de Sistemas não possui estágio curricular obrigatório, mas os alunos poderão realizar estágio extra-curricular durante seu período de realização do curso (sendo possível desde sua matrícula no curso até a conclusão do mesmo). Para isso, busque o chefe de ensino do Câmpus para orientação sobre documentação."
+  },
+  {
+    "id": 10,
+    "category": "Desenvolvimento de Sistemas",
+    "subcategory": "Alunos",
+    "question": "Quais os requisitos para realização de estágio extra-curricular?",
+    "answer": "Como requisitos para realização de estágio, o aluno deve estar regularmente matriculado no curso, frequentando as aulas (considerando frequência de pelo menos 75%) e as atividades do estágio devem estar relacionadas ao curso. Para mais informações, busque o chefe de ensino do Câmpus para orientação sobre documentação."
   }
 ]

@@ -24,29 +24,9 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
-                ajustarNavbar();
             });
 
-        /*function ajustarNavbar() {
-            let path = window.location.pathname;
-            let isHome = path.includes("/home/index.html") || path.endsWith("/home/");
-            let navLinks = document.querySelector(".navbar-nav");
-
-            if (!isHome) {
-                let homeLink = navLinks.querySelector("a[href='#home']");
-                if (homeLink) homeLink.setAttribute("href", "/src/home/index.html");
-
-                let scheduleLink = navLinks.querySelector("a[href='#programacao']");
-                if (scheduleLink) scheduleLink.setAttribute("href", "/src/programacao/index.html");
-
-                let contatoLink = navLinks.querySelector("a[href='#contato']");
-                if (contatoLink) contatoLink.closest("li").remove();
-
-                let arenaLink = navLinks.querySelector("a[href='#arena']");
-                if (arenaLink) arenaLink.setAttribute("href", "../arenagame/index.html");
-            }
-        }
-            */
+        
     </script>
 
     <main>
@@ -61,7 +41,7 @@
 
                          <a class="btn-encerrada" target="_blank"> <i class="bi bi-pencil-square me-2"></i>Inscrições
                             encerradas</a>
-                        <a href="#FAQ" class="btn-cta">Saiba mais</a> 
+                        <a href="#selecao" class="btn-cta">Saiba mais</a> 
                         <!-- <a href="https://processoseletivo.ifsul.edu.br/" class="btn-cta" target="_blank"> <i class="bi bi-pencil-square me-2"></i>Inscrições Aqui!</a> -->
                         <!-- <a class="btn-encerrada" style="background-color: rgba(27, 172, 27, 0.164); cursor: default;">
 
@@ -72,7 +52,7 @@
                         <!-- Botão Saiba mais Removido pois não há link de vestibular fornecido -->
                     </div>
                     <div class="col-lg-6 hero-image">
-                        <img src="../../assets/img/alunos_tmsi.jpeg" alt="Técnico em Desenvolvimento de Sistemas">
+                        <img src="../../assets/img/alunos_BCC.jpeg" alt="Técnico em Desenvolvimento de Sistemas">
                     </div>
                 </div>
             </div>
@@ -111,13 +91,13 @@
                     </fieldset>
 
                     <fieldset class="card-info-curso">
-                        <legend class="card-titulo">Coordenação</legend>
+                        <legend class="card-titulo">Chefe de Ensino</legend>
                         <div class="card-conteudo">
                             <img src="https://cdn.prod.website-files.com/684b3a171f24ed59da1346e6/684b3a171f24ed59da134b8a_hierarchical-structure.svg"
                                 alt="Ícone">
                             <div class="info-texto">
-                                <span class="nome-prof">Coordenação de Curso</span>
-                                <span class="email-prof">contato@ifsul.edu.br</span>
+                                <span class="nome-prof">Chefe de Ensino</span>
+                                <span class="email-prof">le-depex@ifsul.edu.br</span>
                             </div>
                         </div>
                     </fieldset>
@@ -164,7 +144,7 @@
                         <div class="card-conteudo">
                             <img src="https://cdn.prod.website-files.com/684b3a171f24ed59da1346e6/684b3a171f24ed59da134b59_degrees.svg"
                                 alt="Ícone">
-                            <span>40 por semestre</span>
+                            <span>40 por ingresso</span>
                         </div>
                     </fieldset>
                 </div>
@@ -275,9 +255,9 @@
                                 <div class="differential-icon">
                                     <i class="bi bi-briefcase"></i>
                                 </div>
-                                <h3 class="differential-title">Preparação para o Mercado</h3>
+                                <h3 class="differential-title">Preparação para o Trabalho</h3>
                                 <p class="differential-text">
-                                    Formação alinhada com as demandas do mercado, preparando profissionais prontos para
+                                    Formação alinhada com as demandas do mundo do trabalho, preparando profissionais prontos para
                                     atuar.
                                 </p>
                             </div>
@@ -287,75 +267,6 @@
             </section>
             </section>
 
-            <!--
-            <section class="ambientes-section">
-                <div class="container">
-                    <div class="section-header">
-                        <span class="section-badge">AMBIENTES</span>
-                        <h2 class="section-title">Conheça Nossa Infraestrutura</h2>
-                        <p class="section-description">
-                            Espaços modernos e equipados para sua formação profissional
-                        </p>
-                    </div>
-
-                    <div class="carousel-container">
-                        <div id="ambientesCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#ambientesCarousel" data-bs-slide-to="0"
-                                    class="active"></button>
-                                <button type="button" data-bs-target="#ambientesCarousel" data-bs-slide-to="1"></button>
-                                <button type="button" data-bs-target="#ambientesCarousel" data-bs-slide-to="2"></button>
-                                <button type="button" data-bs-target="#ambientesCarousel" data-bs-slide-to="3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="../../assets/img/Places/Sala-Aula.jpg" class="d-block w-100"
-                                        alt="Laboratório de Informática">
-                                    <div class="carousel-caption">
-                                        <h5>Laboratório de Informática</h5>
-                                        <p>Equipamentos de última geração para práticas e desenvolvimento</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../../assets/img/Places/Sala-Moderna.jpg" class="d-block w-100"
-                                        alt="Sala de Aula">
-                                    <div class="carousel-caption">
-                                        <h5>Salas de Aula Modernas</h5>
-                                        <p>Ambientes climatizados e equipados com recursos multimídia</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../../assets/img/Places/Biblio.jpg" class="d-block w-100"
-                                        alt="Biblioteca">
-                                    <div class="carousel-caption">
-                                        <h5>Biblioteca</h5>
-                                        <p>Amplo acervo técnico e espaços de estudo</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../../assets/img/Places/Convi.jpg" class="d-block w-100"
-                                        alt="Área de Convivência">
-                                    <div class="carousel-caption">
-                                        <h5>Áreas de Convivência</h5>
-                                        <p>Espaços para integração e descanso</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#ambientesCarousel"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Anterior</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#ambientesCarousel"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Próximo</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            -->
 
             <section class="cta-section" id="inscricao">
                 <div class="container">
@@ -375,7 +286,7 @@
             </section>
 
 
-            <section class="docs-section">
+            <section class="docs-section" id="selecao">
                 <div class="container">
                     <div class="section-header">
                         <span class="section-badge">DOCUMENTAÇÃO</span>
@@ -385,21 +296,7 @@
                         </p>
                     </div>
                     <div class="docs-grid">
-                        <!--
-                        <div class="doc-card">
-                            <div class="doc-icon">
-                                <i class="bi bi-clipboard-check"></i>
-                            </div>
-                            <h3 class="doc-title">Resultados de Processos Seletivos</h3>
-                            <p class="doc-description">
-                                Confira a lista dos candidatos aprovados no primeiro processo
-                            </p>
-                            <a href="https://processoseletivo.ifsul.edu.br/vestibular-2026-2/"
-                                class="doc-link" target="_blank">
-                                Ver resultado <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                        -->
+                        
                         <div class="doc-card">
                             <div class="doc-icon">
                                 <i class="bi bi-file-pdf"></i>
@@ -448,7 +345,7 @@
     </section>
     </main>
 
-    <section class="faqs-section">
+    <section class="faqs-section" id="FAQ">
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">DÚVIDAS FREQUENTES</span>
@@ -477,7 +374,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-    <script src="faq_tmsi.js"></script>
+    <script src="faq.js"></script>
 
     <!-- Script de Autenticação SUAP -->
     <script src="../../assets/js/suap-auth.js"></script>

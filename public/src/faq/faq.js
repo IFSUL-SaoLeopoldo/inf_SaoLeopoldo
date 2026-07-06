@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function getCategoryIcon(category) {
         const icons = {
             'Geral': 'bi-info-circle',
-            'Ciência da Computação': 'bi-code-slash',
-            'TMSI': 'bi-hdd-network',
+            'Desenvolvimento de Sistemas': 'bi-code-slash',
             'default': 'bi-question-circle'
         };
         return icons[category] || icons['default'];

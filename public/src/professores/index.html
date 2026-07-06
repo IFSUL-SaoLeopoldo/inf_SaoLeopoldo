@@ -23,29 +23,9 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
-                ajustarNavbar();
             });
 
-        function ajustarNavbar() {
-            let path = window.location.pathname;
-            let isHome = path.includes("/home/index.html") || path.endsWith("/home/");
-
-            let navLinks = document.querySelector(".navbar-nav");
-
-            if (!isHome) {
-                let homeLink = navLinks.querySelector("a[href='#home']");
-                if (homeLink) homeLink.setAttribute("href", "/src/home/index.html");
-
-                let scheduleLink = navLinks.querySelector("a[href='#programacao']");
-                if (scheduleLink) scheduleLink.setAttribute("href", "/src/programacao/index.html");
-
-                let contatoLink = navLinks.querySelector("a[href='#contato']");
-                if (contatoLink) contatoLink.closest("li").remove();
-
-                let arenaLink = navLinks.querySelector("a[href='#arena']");
-                if (arenaLink) arenaLink.setAttribute("href", "../arenagame/index.html");
-            }
-        }
+       
     </script>
     <main>
         <section id="time" class="py-5 bg-light" style="margin-top: 50px;">
@@ -81,8 +61,41 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Card Placeholder para Preenchimento Manual -->
+                    <div class="col-md-4">
+                        <div class="card-container">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="event-card text-center">
+                                        <img src="../../assets/img/colaboradores/ricardo.jpg"
+                                            alt="Vanessa Machado"
+                                            class="speaker-image mb-3">
+                                        <h4 class="event-title mb-2">Ricardo Radaelli Meira</h4>
+                                        <p class="mb-2">Doutor em Informática na Educação (UFRGS)</p>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <h5>Disciplinas ministradas:</h5>
+                                    <p class="text-justify">Sistemas Operacionais</p>
+                                    <br>
+                                    <h5>Tópicos de Interesse:</h5>
+                                    <p class="text-justify">Desenvolvimento de Sistemas; Processamento de Linguagem Natural</p>
+                                    <div class="social-links">
+                                        <a href="#" target="_blank" class="download-link"><i class="bi bi-link-45deg"></i> Lattes</a>
+                                        <hr>
+                                        <a href="mailto:ricardomeira@ifsul.edu.br" target="_blank" class="download-link"><i class="bi bi-envelope"></i>ricardomeira@ifsul.edu.br</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
+
+            
         </section>
 
         <div id="footer-placeholder"></div>

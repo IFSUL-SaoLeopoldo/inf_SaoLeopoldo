@@ -4,30 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     let faqData = [];
 
-    // Busca os dados da fonte local e da principal
-    Promise.all([
-        fetch('faq_tmsi_data.json').then(res => res.json()).catch((e) => {
-            // Tenta pegar de faq_data.json local como fallback
-            return fetch('faq_data.json').then(res => res.json()).catch(() => []);
-        }),
-        fetch('../faq/faq_data.json').then(res => res.json()).catch(() => [])
-    ])
-    .then(([localData, faqGeneralData]) => {
-        // Filtra do faq geral o que é válido para TMSI
-        const relevantFaq = faqGeneralData.filter(item => 
-            item.category === 'TMSI' || item.category === 'Geral'
-        );
-        
-        // Remove duplicatas que já existem no JSON local
-        const localQuestions = localData.map(item => item.question.trim().toLowerCase());
-        const uniqueRelevantFaq = relevantFaq.filter(item => 
-            !localQuestions.includes(item.question.trim().toLowerCase())
-        );
-
-        // Junta tudo, dando prioridade ao arquivo local
-        faqData = [...localData, ...uniqueRelevantFaq];
-        renderFAQ(faqData);
-    })
+    // Busca os dados do FAQ geral
+    fetch('../faq/faq_data.json')
+        .then(res => res.json())
+        .catch(() => [])
+        .then(faqGeneralData => {
+            // Filtra somente as perguntas de Desenvolvimento de Sistemas ou Geral
+            faqData = faqGeneralData.filter(item => 
+                item.category === 'Desenvolvimento de Sistemas' || item.category === 'Geral'
+            );
+            renderFAQ(faqData);
+        });
 
     function renderFAQ(data) {
         faqTabs.innerHTML = '';
@@ -43,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach(item => {
             let tabName = item.subcategory || 'Geral';
             // Unifica termos do JSON com as abas do HTML do TMSI
-            if (tabName === 'Ingresso' || tabName === 'Candidatos' || tabName === 'Institucional') {
+            if (tabName === 'Ingresso' || tabName === 'Candidato' || tabName === 'Institucional') {
                 tabName = 'Quero Ingressar';
             }
             if (!groupedData[tabName]) {

@@ -24,29 +24,9 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
-                ajustarNavbar();
             });
 
-        function ajustarNavbar() {
-            let path = window.location.pathname;
-            let isHome = path.includes("/home/index.html") || path.endsWith("/home/");
-
-            let navLinks = document.querySelector(".navbar-nav");
-
-            if (!isHome) {
-                let homeLink = navLinks.querySelector("a[href='#home']");
-                if (homeLink) homeLink.setAttribute("href", "/src/home/index.html");
-
-                let scheduleLink = navLinks.querySelector("a[href='#programacao']");
-                if (scheduleLink) scheduleLink.setAttribute("href", "/src/programacao/index.html");
-
-                let contatoLink = navLinks.querySelector("a[href='#contato']");
-                if (contatoLink) contatoLink.closest("li").remove();
-
-                let arenaLink = navLinks.querySelector("a[href='#arena']");
-                if (arenaLink) arenaLink.setAttribute("href", "../arenagame/index.html");
-            }
-        }
+        
     </script>
     <main>
 
@@ -59,17 +39,7 @@
                         Este é o time que está por trás do desenvolvimento e manutenção do nosso site.
                     </p>
                 </div>
-                <div class="position-relative">
-
-                    <div id="carouselArena" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="../../assets/img/Colaboradores/time.jpg" class="d-block w-100"
-                                    alt="Equipe-Dev">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
         </section>
 
         <section id="time" class="py-5 bg-light" style="margin-top: 50px;">
@@ -102,31 +72,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4 mb-4">
-                        <div class="card-container">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <div class="event-card text-center">
-                                        <img src="../../assets/img/Colaboradores/Alex.jpeg" alt="Felipe Nunes"
-                                            class="speaker-image mb-3">
-                                        <h4 class="event-title mb-2">Alex Sebben da Cunha</h4>
-                                        <p class="mb-2">Equipe de Desenvolvimento</p>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <div class="social-links">
-                                        <a href="http://lattes.cnpq.br/5915914429542783" target="_blank"
-                                            class="download-link"><i class="bi bi-link-45deg"></i>
-                                            Lattes</a>
-                                        <br>
-                                        <a href="mailto:alex.sebben.cunha@gmail.com" target="_blank"
-                                            class="download-link"><i class="bi bi-envelope"></i>
-                                            alex.sebben.cunha@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 <div class="col-md-4 mb-4">
                         <div class="card-container">
                             <div class="card-inner">
@@ -148,89 +94,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-                    
-                    
-                    <div class="col-md-4 mb-4">
-                        <div class="card-container">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <div class="event-card text-center">
-                                        <img src="../../assets/img/Colaboradores/Marcelo.jpeg" alt="Felipe Nunes"
-                                            class="speaker-image mb-3">
-                                        <h4 class="event-title mb-2">Marcelo Henrique Germiniani Panho</h4>
-                                        <p class="mb-2">Equipe de Desenvolvimento</p>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <div class="social-links">
-                                        <a href="https://www.linkedin.com/in/marcelo-henrique-germiniani-panho/" target="_blank" class="download-link"><i class="bi bi-linkedin"></i>
-                                            Linkedin</a>
-                                            <br>
-                                         <a href="mailto:marcelohpanho@gmail.com"target="_blank"
-                                            class="download-link"><i class="bi bi-envelope"></i>
-                                            marcelohpanho@gmail.com </a>   
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4">
-                        <div class="card-container">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <div class="event-card text-center">
-                                        <img src="../../assets/img/Colaboradores/Viviane.jpeg" alt="Felipe Nunes"
-                                            class="speaker-image mb-3">
-                                        <h4 class="event-title mb-2">Viviane Biazus Aneris</h4>
-                                        <p class="mb-2">Equipe de Testes</p>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <div class="social-links">
-                                        <a href="#" target="_blank" class="download-link"><i class="bi bi-linkedin"></i>
-                                            Linkedin</a>
-                                            <br>
-                                        <a href="mailto:viviane_biazus@hotmail.com " target="_blank"
-                                            class="download-link"><i class="bi bi-envelope"></i>
-                                            viviane_biazus@hotmail.com </a>
-                                            
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4">
-                        <div class="card-container">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <div class="event-card text-center">
-                                        <img src="../../assets/img/Colaboradores/Kimberly.jpg" alt="Felipe Nunes"
-                                            class="speaker-image mb-3">
-                                        <h4 class="event-title mb-2">Kimberly Rolim</h4>
-                                        <p class="mb-2">Identidade Visual</p>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <div class="social-links">
-                                        <a href="https://www.linkedin.com/in/kimberly-rolim-6a26b0187?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="download-link"><i class="bi bi-linkedin"></i>
-                                            Linkedin</a>
-                                                                                        <br>
-
-                                         <a href="mailto:kimberlyrolim07@gmail.com"target="_blank"
-                                            class="download-link"><i class="bi bi-envelope"></i>
-                                            kimberlyrolim07@gmail.com </a>   
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-
 
 
 
