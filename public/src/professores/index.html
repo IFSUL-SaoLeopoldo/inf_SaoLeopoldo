@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/img/logo-ifsul.ico">
-    <title>Eixo Informação e Comunicação - Professores</title> <script src="https://cdn.tailwindcss.com"></script>
+    <title>Eixo Informação e Comunicação - Professores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -25,77 +26,18 @@
                 document.getElementById('header-placeholder').innerHTML = data;
             });
 
-       
+
     </script>
     <main>
         <section id="time" class="py-5 bg-light" style="margin-top: 50px;">
             <div class="container">
                 <h2 class="section-title">Professores</h2>
                 <hr class="divider mb-4">
-                <div class="row g-4">
-                    <!-- Card Placeholder para Preenchimento Manual -->
-                    <div class="col-md-4">
-                        <div class="card-container">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <div class="event-card text-center">
-                                        <img src="../../assets/img/colaboradores/Vanessa.png"
-                                            alt="Vanessa Machado"
-                                            class="speaker-image mb-3">
-                                        <h4 class="event-title mb-2">Vanessa Lago Machado</h4>
-                                        <p class="mb-2">Doutora em Ciência da Computação (UFSC)</p>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <h5>Disciplinas ministradas:</h5>
-                                    <p class="text-justify">Algoritmos e lógica de programação</p>
-                                    <br>
-                                    <h5>Tópicos de Interesse:</h5>
-                                    <p class="text-justify">Desenvolvimento de Sistemas; Ciência de Dados</p>
-                                    <div class="social-links">
-                                        <a href="#" target="_blank" class="download-link"><i class="bi bi-link-45deg"></i> Lattes</a>
-                                        <hr>
-                                        <a href="mailto:vanessamachado@ifsul.edu.br" target="_blank" class="download-link"><i class="bi bi-envelope"></i>vanessamachado@ifsul.edu.br</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card Placeholder para Preenchimento Manual -->
-                    <div class="col-md-4">
-                        <div class="card-container">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <div class="event-card text-center">
-                                        <img src="../../assets/img/colaboradores/ricardo.jpg"
-                                            alt="Vanessa Machado"
-                                            class="speaker-image mb-3">
-                                        <h4 class="event-title mb-2">Ricardo Radaelli Meira</h4>
-                                        <p class="mb-2">Doutor em Informática na Educação (UFRGS)</p>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <h5>Disciplinas ministradas:</h5>
-                                    <p class="text-justify">Sistemas Operacionais</p>
-                                    <br>
-                                    <h5>Tópicos de Interesse:</h5>
-                                    <p class="text-justify">Desenvolvimento de Sistemas; Processamento de Linguagem Natural</p>
-                                    <div class="social-links">
-                                        <a href="#" target="_blank" class="download-link"><i class="bi bi-link-45deg"></i> Lattes</a>
-                                        <hr>
-                                        <a href="mailto:ricardomeira@ifsul.edu.br" target="_blank" class="download-link"><i class="bi bi-envelope"></i>ricardomeira@ifsul.edu.br</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                <div class="row g-4" id="professores-container">
                 </div>
             </div>
 
-            
+
         </section>
 
         <div id="footer-placeholder"></div>
@@ -112,6 +54,112 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="../../assets/js/animation.js"></script>
+    <script>
+        function criarCardProfessor(nome, disciplinas, dados) {
+            const fotoHtml = dados?.foto
+                ? `<img src="${dados.foto}" alt="${nome}" class="speaker-image mb-3">`
+                : `<div class="mb-3" style="width:150px;height:150px;margin:0 auto;border-radius:50%;background:#e9ecef;display:flex;align-items:center;justify-content:center;color:#6c757d;"><i class="bi bi-person-fill" style="font-size:4.5rem;"></i></div>`;
+
+            const titulacaoHtml = dados?.titulacao
+                ? `<p class="mb-2">${dados.titulacao}</p>`
+                : '';
+
+            const disciplinasHtml = disciplinas
+                .map(d => `<li>${d.nome} (${d.semestre}º Sem.)</li>`)
+                .join('');
+
+            const interessesHtml = dados?.interesses
+                ? `<h5>Tópicos de Interesse:</h5><p class="text-justify">${dados.interesses}</p>`
+                : '';
+
+            const links = [];
+            if (dados?.lattes) {
+                links.push(`<a href="${dados.lattes}" target="_blank" rel="noopener noreferrer" class="download-link"><i class="bi bi-link-45deg"></i> Lattes</a>`);
+            }
+            if (dados?.email) {
+                links.push(`<a href="mailto:${dados.email}" target="_blank" class="download-link"><i class="bi bi-envelope"></i> ${dados.email}</a>`);
+            }
+            const socialHtml = links.length
+                ? `<div class="social-links">${links.join('<hr>')}</div>`
+                : '';
+
+            return `
+                <div class="col-md-4">
+                    <div class="card-container">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="event-card text-center">
+                                    ${fotoHtml}
+                                    <h4 class="event-title mb-2">${nome}</h4>
+                                    ${titulacaoHtml}
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h5>Disciplinas ministradas no Câmpus São Leopoldo:</h5>
+                                <ul class="disciplinas-lista list-disc pl-5 text-start mb-3">
+                                    ${disciplinasHtml}
+                                </ul>
+                                ${interessesHtml}
+                                ${socialHtml}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('professores-container');
+
+            Promise.all([
+                fetch('../../assets/docs/sist/matriz.json').then(r => {
+                    if (!r.ok) throw new Error('Erro ao carregar matriz.json');
+                    return r.json();
+                }),
+                fetch('../../assets/docs/sist/professores.json')
+                    .then(r => (r.ok ? r.json() : []))
+                    .catch(() => [])
+            ])
+                .then(([matriz, professores]) => {
+                    const perfis = {};
+                    professores.forEach(p => {
+                        if (p.nome) perfis[p.nome.trim().toLowerCase()] = p;
+                    });
+
+
+
+                    const porProfessor = new Map();
+                    matriz.forEach(semestre => {
+                        semestre.disciplinas.forEach(disc => {
+                            const prof = (disc.professor || '').trim();
+                            if (!prof || prof.toLowerCase() === 'a definir') return;
+
+                            const chave = prof.toLowerCase();
+                            if (!porProfessor.has(chave)) {
+                                porProfessor.set(chave, { nome: prof, disciplinas: [] });
+                            }
+                            porProfessor.get(chave).disciplinas.push({
+                                nome: disc.nome,
+                                semestre: semestre.semestre
+                            });
+                        });
+                    });
+
+                    if (porProfessor.size === 0) {
+                        container.innerHTML = '<p class="text-center text-muted">Nenhum professor vinculado à grade no momento.</p>';
+                        return;
+                    }
+
+                    container.innerHTML = Array.from(porProfessor.entries()).sort()
+                        .map(([chave, info]) => criarCardProfessor(info.nome, info.disciplinas, perfis[chave]))
+                        .join('');
+                })
+                .catch(err => {
+                    console.error(err);
+                    container.innerHTML = '<p class="text-danger text-center">Não foi possível carregar os professores no momento.</p>';
+                });
+        });
+    </script>
 </body>
 
 </html>

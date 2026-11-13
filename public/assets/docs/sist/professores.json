@@ -1,0 +1,19 @@
+[
+  {
+    "nome": "Vanessa Lago Machado",
+    "titulacao": "Doutora em Ciência da Computação (UFSC)",
+    "foto": "../../assets/img/Colaboradores/Vanessa.png",
+    "interesses": "Desenvolvimento de Sistemas; Ciência de Dados",
+    "lattes": "http://lattes.cnpq.br/3380231958453011",
+    "email": "vanessamachado@ifsul.edu.br"
+  },
+  {
+    "nome": "Ricardo Radaelli Meira",
+    "titulacao": "Doutor em Informática na Educação (UFRGS)",
+    "foto": "../../assets/img/Colaboradores/ricardo.jpg",
+    "interesses": "Desenvolvimento de Sistemas; Processamento de Linguagem Natural",
+    "lattes": "",
+    "email": "ricardomeira@ifsul.edu.br"
+  }
+]
+
