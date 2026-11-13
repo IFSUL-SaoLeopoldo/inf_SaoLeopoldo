@@ -1,8 +1,0 @@
-[
-    {
-        "name": "COAE",
-        "location": ["50%", "50%"],
-        "description": "Contatos:<br><i class='bi bi-whatsapp'></i> <a href='https://wa.me/5433122735' target='_blank'>Whatsapp</a><br><i class='bi bi-envelope-fill'></i> pf-coae@ifsul.edu.br",
-        "image": "./assets/icons/assistencia.svg"
-    }
-]
