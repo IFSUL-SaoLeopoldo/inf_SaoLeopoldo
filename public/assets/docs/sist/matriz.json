@@ -31,7 +31,7 @@
         "chTotal": 60,
         "chPresencial": 60,
         "chEAD": 0,
-        "professor": "A definir",
+        "professor": "Erivelto Bauer de Matos",
         "ementa": "../../assets/docs/sist/semestre_1/ementa_introducao_as_habilidades_academicas.pdf"
       }
     ]
@@ -48,28 +48,28 @@
         "chTotal": 120,
         "chPresencial": 120,
         "chEAD": 0,
-        "professor": "A definir",
-        "ementa": ""
+        "professor": "Vanessa Lago Machado",
+        "ementa": "../../assets/docs/sist/semestre_2/ementa_analise_projeto_banco_dados.pdf"
       },
       {
         "id": "ds1",
         "nome": "Desenvolvimento de sistemas I",
         "prereq": "",
         "chTotal": 120,
-        "chPresencial": 120,
-        "chEAD": 0,
-        "professor": "A definir",
-        "ementa": ""
+        "chPresencial": 60,
+        "chEAD": 60,
+        "professor": "Ricardo Radaelli Meira",
+        "ementa": "../../assets/docs/sist/semestre_2/ementa_desenvolvimento_sistemas_i.pdf"
       },
       {
         "id": "dfe",
-        "nome": "Desenvolvimento Front-End",
+        "nome": "Comunicação Técnica e Documentação",
         "prereq": "",
         "chTotal": 60,
         "chPresencial": 60,
         "chEAD": 0,
         "professor": "A definir",
-        "ementa": ""
+        "ementa": "../../assets/docs/sist/semestre_2/ementa_comunicacao_tecnica_documentacao.pdf"
       }
     ]
   },
@@ -90,7 +90,7 @@
       },
       {
         "id": "infr",
-        "nome": "Infraestrutura para aplicações",
+        "nome": "Desenvolvimento Front-End",
         "prereq": "",
         "chTotal": 60,
         "chPresencial": 60,

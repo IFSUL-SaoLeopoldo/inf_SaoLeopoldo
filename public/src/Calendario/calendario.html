@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/img/IV.ico">
-    <title>Eixo Informação e Comunicação IFSUL São Leopoldo - Calendário Acadêmico</title> <script src="https://cdn.tailwindcss.com"></script>
+    <title>Eixo Informação e Comunicação IFSUL São Leopoldo - Calendário Acadêmico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -29,29 +30,98 @@
     <main>
 
 
-<section id="time" class="py-5">
-    <div class="texto-head bg-light text-center pb-3">
-        <h2 class="section-title">Calendário Acadêmico</h2>
-        <hr class="divider">
-    </div>
+        <section id="time" class="py-5">
+            <div class="texto-head bg-light text-center pb-3">
+                <h2 class="section-title">Calendário Acadêmico</h2>
+                <hr class="divider">
+            </div>
 
-        <div class="container bg">
-            <div class="row g-4 justify-content-center">
+            <!-- ===================== CALENDÁRIO 2027 ===================== -->
+            <div class="container bg mb-5">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="year-header">
+                            <h3 class="year-title"><i class="bi bi-calendar3"></i> Calendário Acadêmico 2027</h3>
+                            <p class="year-subtitle">
+                                1º semestre (2027/1): <strong>15/02/2027 a 09/07/2027</strong>
+                            </p>
+                        </div>
 
-                <div class="col-lg-10">
-                    <iframe
-                        class="frame pdf-frame"
-                        src="../../assets/docs/sist/calendario_academico_sao_leopoldo.pdf"
-                        title="Calendário Acadêmico IFSul São Leopoldo 2026">
-                    </iframe>
-                    <div class="calendar-actions">
-                        <a class="btn btn-primary" href="../../assets/docs/sist/calendario_academico_sao_leopoldo.pdf" target="_blank" download>
-                            <i class="bi bi-download"></i> Baixar calendário
-                        </a>
+                        <h4 class="dates-title"><i class="bi bi-exclamation-circle-fill"></i> Fique atento! Datas
+                            importantes</h4>
+
+                        <!-- 2027/1 -->
+                        <h5 class="semester-label">2027/1</h5>
+                        <div class="row g-3 mb-4 box_destaque_calendario">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="date-card highlight">
+                                    <i class="bi bi-flag-fill date-icon"></i>
+                                    <span class="date-event">Início das aulas</span>
+                                    <span class="date-value">15/02</span>
+                                    <span class="date-info">Início do ano / 1º semestre letivo</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="date-card">
+                                    <i class="bi bi-arrow-repeat date-icon"></i>
+                                    <span class="date-event">Rematrícula</span>
+                                    <span class="date-value">18/01 a 29/01</span>
+                                    <span class="date-info">Renovação de matrícula pelo <strong>SUAP</strong></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="date-card">
+                                    <i class="bi bi-envelope-paper-fill date-icon"></i>
+                                    <span class="date-event">Aproveitamento de estudos</span>
+                                    <span class="date-value">15/02 a 05/03</span>
+                                    <span class="date-info">Pedido e Dúvidas por e-mail para
+                                        <b>le-ctds@ifsul.edu.br</b></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="sheet-wrapper">
+                            <iframe class="sheet-frame"
+                                src="https://docs.google.com/spreadsheets/d/1OHa-mJWzCK8h9gK25nNeex2QPT-hGjow/preview"
+                                title="Calendário Acadêmico IFSul São Leopoldo 2027" loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="calendar-actions">
+                            <a class="btn btn-primary"
+                                href="https://docs.google.com/spreadsheets/d/1OHa-mJWzCK8h9gK25nNeex2QPT-hGjow/edit?usp=sharing&ouid=104034506089972815602&rtpof=true&sd=true"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-box-arrow-up-right"></i> Abrir calendário 2027 em nova aba
+                            </a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-            </div> </div> </section>
+            <!-- ===================== CALENDÁRIO 2026 ===================== -->
+            <div class="container bg">
+                <div class="row g-4 justify-content-center">
+
+                    <div class="col-lg-10">
+                        <div class="year-header">
+                            <h3 class="year-title"><i class="bi bi-calendar3"></i> Calendário Acadêmico 2026</h3>
+                        </div>
+                        <iframe class="frame pdf-frame"
+                            src="../../assets/docs/sist/calendario_academico_sao_leopoldo.pdf"
+                            title="Calendário Acadêmico IFSul São Leopoldo 2026">
+                        </iframe>
+                        <div class="calendar-actions">
+                            <a class="btn btn-primary"
+                                href="../../assets/docs/sist/calendario_academico_sao_leopoldo.pdf" target="_blank"
+                                download>
+                                <i class="bi bi-download"></i> Baixar calendário 2026
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
         <div id="footer-placeholder"></div>
         <script>

@@ -150,71 +150,134 @@
             font-weight: 700;
             color: #234e75;
             font-size: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             padding: 1rem 1.5rem;
             background: linear-gradient(135deg, #234e7531 0%, #234e7598 100%);
             border-left: 5px solid #234e75;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(35, 85, 119, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .semester-ch {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #234e75;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 0.25rem 0.8rem;
+            border-radius: 999px;
         }
 
         .subjects {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.2rem;
-
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
         }
 
         .subject {
-            background: linear-gradient(135deg, #234e753f 0%, #234e755b 100%);
-            border: 2px solid #234e75;
+            background: #ffffff;
+            border: 1px solid #d5e1ec;
+            border-top: 4px solid #234e75;
             border-radius: 12px;
-            padding: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            padding: 1.4rem;
+            transition: all 0.25s ease;
             position: relative;
-            min-height: 110px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+            box-shadow: 0 3px 12px rgba(17, 33, 64, 0.07);
         }
 
-        .subject-link {
-            position: absolute;
-            right: 10px;
-            bottom: 8px;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
+        .subject-body {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .subject-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #4a6075;
+        }
+
+        .ch-badge {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.75);
+            gap: 0.3rem;
+            background: #234e75;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+        }
+
+        .ch-breakdown {
+            font-size: 0.82rem;
+            color: #546a7e;
+        }
+
+        .subject-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #e9eff5;
+            font-size: 0.85rem;
+            color: #4a6075;
+        }
+
+        .subject-prof {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 600;
+        }
+
+        .subject-ementa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 999px;
+            background: #eef4f9;
             color: #234e75;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
             text-decoration: none;
             transition: all 0.2s ease;
         }
 
-        .subject-link:hover {
-            background: white;
-            color: #112140;
-            transform: translateY(-1px);
+        .subject-ementa-btn:hover {
+            background: #234e75;
+            color: #ffffff;
         }
 
         .subject:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(35, 85, 119, 0.2);
-            border-color: #234e757c;
+            box-shadow: 0 8px 22px rgba(35, 85, 119, 0.16);
+            border-color: #234e75;
         }
 
         .subject-name {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #234e75;
-            text-align: center;
-            line-height: 1.4;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #112140;
+            text-align: left;
+            line-height: 1.35;
         }
 
         /* Subject States */
@@ -393,17 +456,16 @@
             }
 
             .subjects {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: 1fr;
                 gap: 1rem;
             }
 
             .subject {
-                padding: 1rem;
-                min-height: 100px;
+                padding: 1.1rem;
             }
 
             .subject-name {
-                font-size: 0.85rem;
+                font-size: 0.95rem;
             }
 
             .semester-title {

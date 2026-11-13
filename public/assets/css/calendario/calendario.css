@@ -106,6 +106,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -238,6 +239,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -251,4 +253,178 @@ body {
 
 .download-card {
   animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+
+/* ===== Cabeçalho de cada ano ===== */
+.year-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.year-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #1a5f3a;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.year-subtitle {
+  color: #555;
+  margin: 0;
+}
+
+/* ===== Datas importantes ===== */
+.dates-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #b45309;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.semester-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #1a5f3a;
+  border-left: 4px solid #2d7a52;
+  padding-left: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.date-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+  padding: 1.25rem 1rem;
+  background: #fff;
+  border: 1px solid #d1e7dd;
+  border-top: 4px solid #2d7a52;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.date-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.date-card.highlight {
+  background: linear-gradient(135deg, #1a5f3a 0%, #2d7a52 100%);
+  border-color: #1a5f3a;
+  color: #fff;
+}
+
+.date-icon {
+  font-size: 1.6rem;
+  color: #2d7a52;
+}
+
+.date-event {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.date-value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #1a5f3a;
+}
+
+.date-info {
+  font-size: 0.85rem;
+  color: #555;
+  word-break: break-word;
+}
+
+.date-info a {
+  color: #1a5f3a;
+  font-weight: 600;
+}
+
+.date-card.highlight .date-icon,
+.date-card.highlight .date-value,
+.date-card.highlight .date-info {
+  color: #fff;
+}
+
+/* ===== Botões de ação ===== */
+.calendar-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.calendar-actions .btn-primary {
+  background-color: #1a5f3a;
+  border-color: #1a5f3a;
+  border-radius: 50px;
+  padding: 0.7rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.calendar-actions .btn-primary:hover {
+  background-color: #0f4428;
+  border-color: #0f4428;
+}
+
+.calendar-actions .btn-primary i {
+  margin-right: 0.4rem;
+}
+
+
+/* Planilha do calendário 2027 (Google Sheets)
+   O conteúdo é de outro domínio, então o "zoom" é feito escalando o iframe.
+   Ajuste --sheet-zoom (ex.: 0.6 = 60%) e --sheet-height (altura visível). */
+.sheet-wrapper {
+  --sheet-zoom: 0.55;
+  --sheet-height: 750px;
+  position: relative;
+  width: 100%;
+  height: var(--sheet-height);
+  margin: 1.5rem auto 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.sheet-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  width: calc(100% / var(--sheet-zoom));
+  height: calc(var(--sheet-height) / var(--sheet-zoom));
+  transform: scale(var(--sheet-zoom));
+  transform-origin: 0 0;
+}
+
+@media (max-width: 768px) {
+  .sheet-wrapper {
+    --sheet-zoom: 0.6;
+    --sheet-height: 500px;
+  }
+}
+
+.box_destaque_calendario {
+  margin-left: 0px;
+  margin-right: 0px;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .box_destaque_calendario>div {
+    width: 30%;
+  }
 }
